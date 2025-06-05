@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio Website</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href^="#"]');
+      for (const link of links) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      }
+    });
+  </script>
+ <style>
+  html, body {
+    height: 100%;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    flex: 1;
+    padding-bottom: 50px; /* Allows space for the footer */
+  }
+
+  .footer {
+    background-color: #081b29;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+  <!-- Header-->
+  <header class="header">
+    <a href="index.html" class="logo">Sigqibo Zweni</a>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="active">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="articles.html" class="mobile-only">Articles</a>
+      <a href="Academy/academy.html">Academy</a>
+    </nav>
+  </header>
+  <!-- Side Bar-->
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="Academy/academy.html">Academy</a></li>
+      </ul>
+    </nav>
+  </div>
+  <!-- MAIN BODY CONTENT-->
+  <main class="main-content">
+  <section class="home">
+      <div class="home-content">
+        <div class="Profile-pic-div">
+          <img class="Profile-pic" src="tarsgqie.jpg">
+        </div>
+        <h1>Sigqibo Zweni</h1>
+        <h3>Front End Developer</h3>
+        <p>In the ever-evolving realm of technology, <br> stand as a beacon of innovation and creativity.<br> My journey has been sculpted by a relentless pursuit of excellence in coding, problem-solving, and technical wizardry. From mastering the nuances of HTML and CSS to navigating the intricacies of network configurations, my technical arsenal is vast and diverse. Yet, my passion extends beyond the code - I weave poetry into the fabric of technology, blending the precision of algorithms with the grace of artistic expression.
+          
+          Driven by a commitment to continuous learning <br>and improvement, I embrace challenges as opportunities to innovate. My projects are not just about functionality; they're about crafting digital experiences that resonate, inspire, and transform. With a keen eye for detail and a heart for creativity, I bring a unique perspective to every endeavor.
+          
+          Motivated by a vision to push boundaries and break new ground, <br>I invite you to join me on this exciting journey of discovery and innovation. Together, let's redefine what's possible and create a future where technology and creativity coalesce in harmony.
+          </p>
+        <div class="skills">
+          <h4>My Skills</h4>
+          <div id="skills" class="skill-buttons">
+            <a href="#" class="skill-btn" onclick="showSkillInfo('Front End Developer')">Front End Developer</a>
+            <a href="#" class="skill-btn" onclick="showSkillInfo('CSS')">CSS</a>
+            <a href="#" class="skill-btn" onclick="showSkillInfo('HTML')">HTML</a>
+            <a href="#" class="skill-btn" onclick="showSkillInfo('JavaScript')">JavaScript</a>
+            <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA A+')">CompTIA A+</a>
+            <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA Network+')">CompTIA Network+</a>
+            <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA Server+')">CompTIA Server+</a>
+            <a href="#" class="skill-btn" onclick="showSkillInfo('Training')">Training</a>
+          </div>
+        </div>
+        <div id="contact" class="home-sci">
+          <a href="https://www.facebook.com/yourprofile" target="_blank"><i class='bx bxl-facebook'></i></a>
+          <a href="https://twitter.com/yourprofile" target="_blank"><i class='bx bxl-twitter'></i></a>
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://wa.me/+27818946158" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+        <div class="btn-box">
+          <a href="#">Hire me</a>
+          <a href="#">Let's talk</a>
+        </div>
+      </div>
+    </section>
+
+    
+
+  </main>
+
+  <footer class="footer-container">
+    <div class="footer">
+        <div class="container">
+            <!-- Footer content -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Address: 123 Street, City, Country</p>
+                    <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+                    <p>Phone: <a href="tel:+123456789">+123456789</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="mr-3"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="mr-3"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="mr-3"><i class="bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+  <!-- Bootstrap scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

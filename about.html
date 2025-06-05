@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio Website HTML and CSS only</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href^="#"]');
+      for (const link of links) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      }
+    });
+  </script>
+  <style>
+    html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+
+  .footer {
+    background-color: #081b29;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+  }
+ 
+    @media (max-width: 768px) {
+    .body {
+      margin-top: 250px;
+    }      
+    }
+  </style>
+</head>
+<body class="body">
+  <header class="header">
+    <a href="index.html" class="logo">Sigqibo Zweni</a>
+    <nav class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="contact.html">Contact</a> <!-- Updated this link -->
+      <a href="about.html">About</a>
+      <a href="articles.html" class="mobile-only">Articles</a>
+    </nav>
+  </header>
+  <section>
+    <div class="home-content">
+      <div>
+        <h3>
+          Custom, User-Centered Design
+        </h3>
+        <p>
+          Every website we create is tailored to the 
+          unique needs of your business and your audience.
+           We take the time to understand your brand, 
+           goals, and target audience to design a site 
+           that not only looks great but also provides 
+           an intuitive and enjoyable user experience.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Responsive, Mobile-First Development
+        </h3>
+        <p>
+          In today’s world, it’s crucial that your website looks and performs 
+          flawlessly across all devices. Our mobile-first approach ensures 
+          that your site adapts seamlessly to smartphones, tablets, and
+           desktops, helping you reach a wider audience and increase 
+          engagement.
+        </p>
+      </div>
+      <div>
+        <h3>
+          SEO Optimization from the Start
+        </h3>
+        <p>
+          We don’t just build websites, we build them to be found. 
+          From optimized structure and clean code to content strategy, 
+          we use SEO best practices from the ground up so your site 
+          is search-engine-friendly, helping your business rank 
+          higher and attract more traffic
+        </p>
+      </div>
+      <div>
+        <h3>
+          Fast Loading Times & Performance Optimization
+        </h3>
+        <p>
+          Site speed is critical for user experience and SEO. We
+          implement advanced techniques like image optimization, 
+         code minification, and caching to ensure your website 
+         loads quickly, keeping visitors happy and boosting your 
+         search rankings
+        </p>
+      </div>
+      <div>
+        <h3>
+          Scalable and Secure Development
+        </h3>
+        <p>
+          As your business grows, so should your website. We build
+          websites with scalability in mind, ensuring they can grow 
+         with you. Our team also ensures top-notch security to 
+         protect your website and your users' data from online 
+         threats.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Content Management Systems (CMS) for Easy Updates
+        </h3>
+        <p>
+          We empower you to take control of your website with user-friendly 
+          Content Management Systems (CMS) like WordPress or custom solutions.
+           With a CMS in place, you can easily update content, products, or
+           blog posts without needing to rely on a developer for every change.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Clean, Well-Organized Code
+        </h3>
+        <p>
+            We believe in writing clean, organized, and maintainable 
+            code that ensures the longevity and flexibility of your site. 
+            This means fewer bugs, faster load times, and easier future 
+            updates or changes.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Conversion Rate Optimization (CRO)
+        </h3>
+        <p>
+                Our websites are designed to convert visitors into customers.
+                By incorporating strategic design elements like clear 
+                calls-to-action (CTAs), optimized landing pages, and user 
+                flow analysis, we help you turn clicks into sales and leads.
+        </p>
+      </div>
+      <div>
+        <h3>
+          E-Commerce Solutions & Payment Integration
+        </h3>
+        <p>
+                OFor businesses looking to sell online, we provide secure, 
+                scalable e-commerce solutions that integrate seamlessly 
+                with payment gateways. From product catalogs to 
+                checkout processes, we ensure a smooth and reliable 
+                shopping experience for your customers.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Ongoing Maintenance & Support
+        </h3>
+        <p>
+          Your website is never "finished." We offer ongoing maintenance
+          and support to keep your site up to date with the latest features,
+          security patches, and technology updates, so you can focus on 
+         running your business.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Analytics Integration
+        </h3>
+        <p>
+          We integrate powerful analytics tools to track user behavior,
+          monitor website performance, and provide data-driven insights. 
+         This enables you to make informed decisions that improve your 
+         website and grow your business over time.
+        </p>
+      </div>
+      <div>
+        <h3>
+          SEO-Friendly Content Strategy
+        </h3>
+        <p>
+          We work with you to develop a content strategy that aligns 
+          with your business goals. This includes keyword research, 
+          blog planning, and content optimization to help you create 
+          valuable, SEO-friendly content that resonates with both 
+          users and search engines.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Social Media and Marketing Integration
+        </h3>
+        <p>
+          We can integrate your website with your social media 
+          channels and marketing platforms, ensuring a seamless 
+          experience across your digital presence. Whether it’s
+           embedding social feeds or enabling easy sharing, 
+          we help you connect with your audience everywhere 
+          they are.
+        </p>
+      </div>
+      <div>
+        <h3>
+          ADA Compliance & Accessibility
+        </h3>
+        <p>
+              We understand the importance of making websites accessible 
+              to all users, including those with disabilities. We follow 
+              WCAG (Web Content Accessibility Guidelines) to ensure your 
+              website is usable by people with diverse abilities, expanding 
+              your reach and ensuring compliance with regulations.
+        </p>
+      </div>
+      <div>
+        <h3>
+          Agile Development Process
+        </h3>
+        <p>
+          Our agile development methodology ensures your project 
+          progresses smoothly, with regular updates, feedback loops, 
+          and iterations. This collaborative approach allows us to 
+          adjust and adapt to your evolving needs, ensuring we meet 
+          your business goals at every stage of the development process.
+        </p>
+      </div>
+    </div>
+</section>
+
+  <!-- Footer Menu-->
+  <footer class="footer-container">
+    <div class="footer">
+        <div class="container">
+            <!-- Footer content -->
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="mr-3"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="mr-3"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="mr-3"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+  <script>
+    function showSkillInfo(skill) {
+      alert('You clicked on ' + skill + '!');
+    }
+  </script>
+</body>
+</html>

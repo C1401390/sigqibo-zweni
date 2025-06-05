@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT Academy: Empowering future IT professionals with top-notch training in front-end development, device repairs, and networking.">
+    <title>IT Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+ body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    scroll-behavior: smooth;
+    background: #fff;
+}
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #FFD700 solid;
+    border-radius: 10px;
+}
+header:hover {
+    background-color: #f4cd0a(235, 179, 91);
+}
+#logo-container {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    animation: logoEntrance 2s forwards;
+}
+#logo {
+    width: 100%;
+    height: 100%;
+    background-image: url('placeholder-logo.png');
+    background-size: cover;
+    background-position: center;
+}
+@keyframes logoEntrance {
+    0% {
+        transform: scale(3);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0.3);
+        opacity: 1;
+    }
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.nav-links a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+.nav-links a:hover {
+    color: #333;  /* Text color changes to white on hover */
+    border: solid #FFD700;
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 200px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.search-bar {
+    background: #fff;
+    border: solid #FFD700;
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 200px;
+    margin-right: 0;
+}
+.login-button {
+    background: #FFD700;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-right: 100px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.login-button:hover {
+    background: #fff;
+    color: #333;
+    border: solid #FFD700;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center; /* Center header content */
+        text-align: center;
+        padding: 0; /* Adjust padding for mobile devices */
+        background-size: cover; /* Ensure the background covers the entire width */
+        background: url('Logos/Logo1.png') center/cover no-repeat;
+        background-size: 100%;
+        align-content: center;
+        margin-bottom: 0;
+    }
+    #hero, .hero-content {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center; /* Center navigation links */
+        gap: 1rem;
+        margin: 0;
+    }
+    
+    .nav-links a {
+        display: block; /* Ensures each link spans full width */
+        width: auto; /* Remove the fixed width */
+        padding: 0.5rem 1rem; /* Uniform padding */
+        background: #FFD700; /* Maintain consistent background color */
+        text-align: center; /* Center-align text */
+        border-radius: 4px;
+        color: black;
+        border: white solid;
+    }
+    
+    .nav-links a:hover {
+        color: black; /* Text color on hover */
+        background: white; /* Slightly darker gold for hover effect */
+    }
+    .login-button {
+        margin-right: 0;
+    }
+    .search-bar,
+    .login-button {
+        margin-top: 1rem; /* Add spacing between elements */
+        width: 90%; /* Adjust width to fit better on small screens */
+        align-items: center;
+    }
+
+     /* Article Styles*/
+     #article2 {
+        display: none;
+     }
+ }
+
+#hero {
+    background: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGVjaG5vbG9neXxlbnwwfHwwfHx8MA%3D%3D') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+#hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+#hero h1 {
+    font-size: 3rem;
+    margin: 0;
+    animation: fadeIn 2s ease-out;
+}
+#hero p {
+    margin: 1rem 0;
+    font-size: 1.25rem;
+    animation: fadeIn 2s ease-out 0.5s;
+}
+#hero .cta-button {
+    background: #FFD700;
+    color: #333;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    animation: fadeIn 2s ease-out 1s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+   
+}
+#courses {
+    padding: 2rem;
+    background: url('Logos/Logo1.png') center/cover no-repeat;
+    background-size: 50%;
+    background-color: black;
+    padding-top: 1px;
+}
+#courses h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #fff;
+}
+.course-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.course-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: #FFD700 solid;
+    border-radius: 8px;
+}
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    color: #fff; /* Text color changes to white on hover */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Persistent black shadow */
+    border: white solid;
+    border-radius: 8px;
+}
+.course-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(238, 205, 15, 0.95);
+    z-index: -1;
+    transition: opacity 0.3s;
+}
+.course-card:hover::before {
+    opacity: 0.6;
+}
+footer {
+    background: white;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Article Styles*/
+.articles-container {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .article {
+            flex: 1 1 calc(33.333% - 2rem);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background-color: #FFD700;
+        }
+        .article img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .article h3 {
+            margin: 10px 0 5px;
+        }
+        .article p {
+            margin: 5px 0 10px;
+        }
+        .article a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .article a:hover {
+            text-decoration: underline;
+        }
+        .more-articles {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .more-articles a {
+            background: #FFD700;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .more-articles a:hover {
+            background: #fff;
+            color: #FFD700;
+            border: 1px solid #FFD700;
+        }
+        .article-content {
+            margin-bottom: 0;
+            margin-left: 80px;
+            align-items: left;
+            display: flex;
+            justify-content: start;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <div id="logo"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="academy.html">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="../articles.html">Articles</a></li>
+            <li><a href="../index.html">Sigqibo Zweni</a></li>
+        </ul>
+        <input type="text" class="search-bar" placeholder="Search...">
+        <button class="login-button">Login</button>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Empowering Future IT Professionals</h1>
+            <p>Master Front-End Development, Device Repairs, Networking, and more.</p>
+            <a href="#courses" class="cta-button">Explore Courses</a>
+        </div>
+    </section>
+    <!-- Rest of the page content -->
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <div class="course-cards">
+                    <!-- Couses images -->
+        <div class="article">
+            <img src="fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg" alt="Article Image">
+        </div>
+        <div class="article">
+            <img src="device-repair.jpg" alt="Article Image">
+        </div>
+        <div class="article">
+            <img src="fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg" alt="Article Image">
+        </div>
+        <div class="article">
+            <img src="fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg" alt="Article Image">
+        </div>
+            <div class="course-card">
+                <h3>Front-End Development</h3>
+                <p>Learn HTML, CSS, JavaScript, and more to build stunning websites.</p>
+            </div>
+            <div class="course-card">
+                <h3>Device Repairs</h3>
+                <p>Get hands-on training for repairing computers, mobiles, and more.</p>
+            </div>
+            <div class="course-card">
+                <h3>Networking</h3>
+                <p>Master networking concepts and become a certified professional.</p>
+            </div>
+            <div class="course-card">
+                <h3>Cybersecurity</h3>
+                <p>Understand and mitigate security threats with industry-standard practices.</p>
+            </div>
+        </div>
+    </section>
+    <section id="courses" class="articles">
+        <h2 class="article-content">Articles</h2>
+        <!-- Featured Articles Section -->
+    <section class="articles-container">
+        <div class="article">
+            <img src="fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg" alt="Article Image">
+            <h3>Front-End Development Tutorials</h3>
+            <p>Front-end development is all about creating the visual and interactive aspects of a website that users interact with directly. It involves using technologies like HTML, CSS, and JavaScript to build the structure, design, and functionality of web pages. In this tutorial series, we'll cover the basics of HTML, CSS, and JavaScript, and guide you through creating your own responsive and interactive web pages.</p>
+            <a href="../html-article.html">Read more</a>
+        </div>
+        <div class="article" id="article2">
+            <img src="mohammad-rahmani-LrxSl4ZxoRs-unsplash.jpg" alt="Article Image">
+            <h3>Mastering Front-End Development: Advanced Techniques and Best Practices</h3>
+            <p>Front-end development goes beyond creating static web pages; it involves crafting interactive, responsive, and visually appealing user interfaces. In this advanced guide, we will explore key topics, including modern CSS techniques, JavaScript optimizations, and leveraging frameworks to enhance productivity. Whether you are a budding developer or an experienced coder, this article will provide actionable insights and examples to refine your skills.</p>
+            <a href="../2nd-html-article.html">Read more</a>
+        </div>
+    </section>
+    <div class="more-articles">
+        <a href="../articles.html">View All Articles</a>
+    </div>
+        
+    </div>
+    </section>
+    <footer class="footer-container">
+        <p>&copy; 2024 IT Academy. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const sliderWrapper = document.querySelector('.slider-wrapper');
+        const slides = document.querySelectorAll('.slide');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        let currentIndex = 0;
+        const visibleSlides = 3;
+
+        function updateSliderPosition() {
+            const offset = currentIndex * -100 / visibleSlides;
+            sliderWrapper.style.transform = `translateX(${offset}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = slides.length - visibleSlides;
+            }
+            updateSliderPosition();
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < slides.length - visibleSlides) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateSliderPosition();
+        });
+
+        // Autoplay feature
+        let autoplay = setInterval(() => {
+            nextButton.click();
+        }, 5000);
+
+        // Pause autoplay on hover
+        sliderWrapper.addEventListener('mouseover', () => clearInterval(autoplay));
+        sliderWrapper.addEventListener('mouseout', () => {
+            autoplay = setInterval(() => nextButton.click(), 5000);
+        });
+
+        // Initialize the slider position
+        updateSliderPosition();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Sigqibo Zweni</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    .contact-content {
+      margin-top: 50px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-form, .skills, .contact-info {
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .contact-form {
+      border: 2px solid #00abf0;
+      border-radius: 10px;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #081b29;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .contact-form button {
+      padding: 10px 20px;
+      background-color: #00abf0;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      max-width: 150px;
+      margin: 20px auto 0;
+    }
+    .contact-form button:hover {
+      background-color: #005f7f;
+    }
+    .skill-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .skill-btn {
+      padding: 10px 20px;
+      background-color: #081b29;
+      color: #00abf0;
+      border: 2px solid #00abf0;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+      text-align: center;
+    }
+    .skill-btn:hover {
+      background-color: #00abf0;
+      color: #081b29;
+    }
+    .home-sci a {
+      margin-right: 0;
+      color: #333;
+      text-decoration: none;
+      font-size: 24px;
+    }
+    .home-sci a:hover {
+      color: #555;
+    }
+    .skills h4 {
+      text-align: center;
+    }
+    .contact-info {
+      text-align: center;
+    }
+
+    .body {
+      justify-content: center;
+      margin-top: 100px;
+    }
+    .mobile-only {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .body {
+        margin-top: 250px;
+      }
+      .mobile-only {
+        display: block;
+      }
+
+    }
+  </style>
+</head>
+<body class="body">
+  <header class="header">
+    <a href="index.html" class="logo">Sigqibo Zweni</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="about.html">About</a>
+      <a href="articles.html" class="mobile-only">Articles</a>
+    </nav>
+  </header>
+  <!-- Side Bar-->
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="articles.html">Articles</a></li>
+      </ul>
+    </nav>
+  </div>
+  <section class="contact-page">
+    <div class="contact-content">
+      <h3>Contact Me</h3>
+      <form id="contactForm" class="contact-form" action="send_email.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Submit</button>
+      </form>
+      <div class="skills">
+        <h4>My Skills</h4>
+        <div id="skills" class="skill-buttons">
+          <a href="#" class="skill-btn" onclick="showSkillInfo('Front End Developer')">Front End Developer</a>
+          <a href="#" class="skill-btn" onclick="showSkillInfo('CSS')">CSS</a>
+          <a href="#" class="skill-btn" onclick="showSkillInfo('HTML')">HTML</a>
+          <a href="#" class="skill-btn" onclick="showSkillInfo('JavaScript')">JavaScript</a>
+          <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA A+')">CompTIA A+</a>
+          <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA Network+')">CompTIA Network+</a>
+          <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA Server+')">CompTIA Server+</a>
+          <a href="#" class="skill-btn" onclick="showSkillInfo('Training')">Training</a>
+        </div>
+      </div>
+      
+      <div class="contact-info">
+        <p>Email: sigqibogeorge@gmail.com</p>
+        <p>Phone: +27 81 894 6158</p>
+      </div>
+      <div id="contact" class="home-sci">
+        <a href="https://www.facebook.com/yourprofile" target="_blank"><i class='bx bxl-facebook'></i></a>
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class='bx bxl-twitter'></i></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://wa.me/+27818946158" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+      </div>
+    </div>
+</section>
+  <script>
+    function showSkillInfo(skill) {
+      alert('You clicked on ' + skill + '!');
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Simple form validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      if (name && email && message) {
+        alert('Thank you for your message, ' + name + '!');
+        // Here you can add code to send the form data to your server
+      } else {
+        alert('Please fill out all fields.');
+      }
+    });
+  </script>
+</body>
+</html>

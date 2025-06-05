@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to optimize images and media for the web using modern techniques and tools.">
+    <title>The Front-End Developer's Guide to Image and Media Optimization</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a  {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, footer {
+                padding: 15px 10px;
+            }
+            header h1, footer p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Front-End Developer's Guide to Image and Media Optimization</h1>
+        <p>Learn how to optimize images and media for the web using modern techniques and tools.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#formats">Choosing the Right Formats</a></li>
+            <li><a href="#responsive-images">Responsive Images</a></li>
+            <li><a href="#optimization-tools">Optimization Tools</a></li>
+            <li><a href="#lazy-loading">Lazy Loading and CDN Hosting</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="formats">
+            <h2>Choosing the Right Formats</h2>
+            <p>Choosing the appropriate image format can greatly affect your website’s performance:</p>
+            <ul>
+                <li><strong>WebP:</strong> A modern image format that provides superior compression. Use WebP for most images to reduce file size without losing quality.</li>
+                <li><strong>SVG:</strong> Ideal for logos and icons, SVGs are scalable and provide high-quality rendering at any size.</li>
+                <li><strong>JPEG and PNG:</strong> Use JPEG for photographs and PNG for images with transparency or when you need a lossless format.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: Using WebP and SVG -->
+<img src="image.webp" alt="Optimized Image" />
+
+<svg width="100" height="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+</svg>
+                </code>
+            </pre>
+        </section>
+
+        <section id="responsive-images">
+            <h2>Responsive Images with srcset and sizes Attributes</h2>
+            <p>Using <code>srcset</code> and <code>sizes</code> attributes ensures your images are responsive:</p>
+            <ul>
+                <li><strong>srcset:</strong> Defines the set of images to use based on device characteristics (e.g., screen resolution).</li>
+                <li><strong>sizes:</strong> Specifies the intended display size of the image for different viewport widths.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: Responsive Images -->
+<img src="image-small.jpg"
+     srcset="image-small.jpg 600w, image-medium.jpg 1200w, image-large.jpg 2000w"
+     sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+     alt="Responsive Image">
+                </code>
+            </pre>
+        </section>
+
+        <section id="optimization-tools">
+            <h2>Using Tools like ImageOptim, TinyPNG, or Squoosh</h2>
+            <p>Optimize your images using tools designed for compression:</p>
+            <ul>
+                <li><strong>ImageOptim:</strong> An easy-to-use tool for Mac that compresses images without losing quality.</li>
+                <li><strong>TinyPNG:</strong> An online tool that compresses PNG and JPEG images, reducing file size while maintaining image quality.</li>
+                <li><strong>Squoosh:</strong> A web-based tool by Google that offers various compression options and a live comparison of the original and optimized images.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: Using Squoosh for Compression -->
+<!-- Visit https://squoosh.app/ and upload your image to start compressing. -->
+                </code>
+            </pre>
+        </section>
+
+        <section id="lazy-loading">
+            <h2>Implementing Lazy Loading and CDN Hosting</h2>
+            <p>Improve your website's performance by implementing lazy loading and using a Content Delivery Network (CDN):</p>
+            <ul>
+                <li><strong>Lazy Loading:</strong> Load images only when they are about to enter the viewport. This reduces initial page load time and conserves bandwidth.</li>
+                <li><strong>CDN Hosting:</strong> Use a CDN to serve images from servers closest to the user, reducing latency and improving load times.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: Lazy Loading -->
+<img src="placeholder.jpg" data-src="actual-image.jpg" alt="Lazy Loading Image" class="lazy-load">
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const lazyLoadImages = document.querySelectorAll("img.lazy-load");
+        
+        function onIntersection(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.getAttribute("data-src");
+                    img.classList.remove("lazy-load");
+                    observer.unobserve(img);
+                }
+            });
+        }
+
+        const observer = new IntersectionObserver(onIntersection);
+        lazyLoadImages.forEach(img => observer.observe(img));
+    });
+</script>
+                </code>
+            </pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Master Front-End Development | All Rights Reserved</p>
+        <ul>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

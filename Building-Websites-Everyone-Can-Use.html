@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to build accessible websites with keyboard navigation, screen reader support, ARIA roles, and color contrast checks.">
+    <title>Building Websites Everyone Can Use: Accessibility in Front-End Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a  {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, footer {
+                padding: 15px 10px;
+            }
+            header h1, footer p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Building Websites Everyone Can Use: Accessibility in Front-End Development</h1>
+        <p>Learn how to build accessible websites with keyboard navigation, screen reader support, ARIA roles, and color contrast checks.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#keyboard-navigation">Keyboard Navigation</a></li>
+            <li><a href="#aria-roles">ARIA Roles</a></li>
+            <li><a href="#color-contrast">Color Contrast Checks</a></li>
+            <li><a href="#accessibility-testing">Accessibility Testing</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="keyboard-navigation">
+            <h2>Ensuring Keyboard Navigation and Screen Reader Support</h2>
+            <p>Accessibility starts with ensuring that your website can be navigated using a keyboard and is compatible with screen readers:</p>
+            <ul>
+                <li><strong>Keyboard Navigation:</strong> Ensure all interactive elements can be accessed and operated using a keyboard. Use <code>tabindex</code> to manage the focus order.</li>
+                <li><strong>Screen Reader Support:</strong> Provide meaningful text descriptions for screen readers. Use semantic HTML and <code>aria-label</code> attributes.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: Keyboard Navigation and Screen Reader Support -->
+<button tabindex="0" aria-label="Submit form">Submit</button>
+
+<a href="index.html" tabindex="0" aria-label="Home Page">Home</a>
+
+<input type="text" aria-label="Search input" />
+                </code>
+            </pre>
+        </section>
+
+        <section id="aria-roles">
+            <h2>Adding ARIA Roles to Interactive Elements</h2>
+            <p>ARIA (Accessible Rich Internet Applications) roles help improve the accessibility of dynamic content:</p>
+            <ul>
+                <li><strong>Button Role:</strong> Use <code>role="button"</code> for clickable elements that aren't <code>&lt;button&gt;</code> tags.</li>
+                <li><strong>Navigation Role:</strong> Use <code>role="navigation"</code> for groups of primary navigation links.</li>
+                <li><strong>Alert Role:</strong> Use <code>role="alert"</code> for important, dynamically generated content.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: ARIA Roles -->
+<div role="button" tabindex="0" aria-label="Close Menu">X</div>
+
+<nav role="navigation">
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<div role="alert">Form submission successful!</div>
+                </code>
+            </pre>
+        </section>
+
+        <section id="color-contrast">
+            <h2>Color Contrast Checks for Readability</h2>
+            <p>Ensuring sufficient color contrast is crucial for readability, especially for users with visual impairments:</p>
+            <ul>
+                <li><strong>Contrast Ratio:</strong> The contrast ratio between text and background should be at least 4.5:1 for normal text and 3:1 for large text.</li>
+                <li><strong>Tools:</strong> Use tools like the <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Contrast Checker</a> to test your color combinations.</li>
+            </ul>
+            <pre>
+                <code>
+/* Example: Color Contrast */
+body {
+    background-color: #fff;
+    color: #333; /* Contrast ratio is 21:1 */
+}
+
+a {
+    color: #1a0dab; /* Ensure sufficient contrast with background */
+}
+
+a:hover {
+    color: #d93025; /* Ensure sufficient contrast on hover */
+}
+                </code>
+            </pre>
+        </section>
+
+        <section id="accessibility-testing">
+            <h2>Testing Accessibility with Tools like Lighthouse and WAVE</h2>
+            <p>Use automated tools to test and improve your website’s accessibility:</p>
+            <ul>
+                <li><strong>Lighthouse:</strong> An open-source tool by Google, available in Chrome DevTools, that audits your site for performance, accessibility, and more.</li>
+                <li><strong>WAVE:</strong> A web accessibility evaluation tool that provides visual feedback about the accessibility of your web content.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: Running Lighthouse in Chrome DevTools -->
+<!-- Open Chrome DevTools (F12) -> Go to "Lighthouse" tab -> Click "Generate report" -->
+
+<!-- Example: Using WAVE for Accessibility Checks -->
+<!-- Visit https://wave.webaim.org/ -> Enter your website URL -> Review the accessibility report -->
+                </code>
+            </pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Master Front-End Development | All Rights Reserved</p>
+        <ul>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT Academy: Empowering future IT professionals with top-notch training in front-end development, device repairs, and networking.">
+    <title>IT Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+            background: #f4f4f4;
+        }
+        .articles-container {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .article {
+            flex: 1 1 calc(33.333% - 2rem);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .article img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .article h3 {
+            margin: 10px 0 5px;
+        }
+        .article p {
+            margin: 5px 0 10px;
+        }
+        .article a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .article a:hover {
+            text-decoration: underline;
+        }
+        .more-articles {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .more-articles a {
+            background: #FFD700;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .more-articles a:hover {
+            background: #fff;
+            color: #FFD700;
+            border: 1px solid #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <div id="logo"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="academy.html">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/index.html/Alphastatebildg/Academy">Sigqibo Zweni</a></li>
+        </ul>
+        <div class="header-right">
+            <input type="text" class="search-bar" placeholder="Search...">
+            <button class="login-button">Login</button>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Empowering Future IT Professionals</h1>
+            <p>Master Front-End Development, Device Repairs, Networking, and more.</p>
+            <a href="#courses" class="cta-button">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Featured Articles Section -->
+    <section class="articles-container">
+        <div class="article">
+            <img src="path-to-image1.jpg" alt="Article Image">
+            <h3>Article Title 1</h3>
+            <p>Brief description of the article goes here.</p>
+            <a href="path-to-article-1.html">Read more</a>
+        </div>
+        <div class="article">
+            <img src="path-to-image2.jpg" alt="Article Image">
+            <h3>Article Title 2</h3>
+            <p>Brief description of the article goes here.</p>
+            <a href="path-to-article-2.html">Read more</a>
+        </div>
+    </section>
+    <div class="more-articles">
+        <a href="all-articles.html">View All Articles</a>
+    </div>
+
+    <!-- Rest of the page content -->
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <div class="course-cards">
+            <div class="course-card">
+                <h3>Front-End Development</h3>
+                <p>Learn HTML, CSS, JavaScript, and more to build stunning websites.</p>
+            </div>
+            <div class="course-card">
+                <h3>Device Repairs</h3>
+                <p>Get hands-on training for repairing computers, mobiles, and more.</p>
+            </div>
+            <div class="course-card">
+                <h3>Networking</h3>
+                <p>Master networking concepts and become a certified professional.</p>
+            </div>
+            <div class="course-card">
+                <h3>Cybersecurity</h3>
+                <p>Understand and mitigate security threats with industry-standard practices.</p>
+            </div>
+            <div class="course-card">
+                <h3>Server Management</h3>
+                <p>Learn server setup, maintenance, and troubleshooting skills.</p>
+            </div>
+            <div class="course-card">
+                <h3>Cloud Computing</h3>
+                <p>Explore cloud technologies and build scalable solutions.</p>
+            </div>
+            <div class="course-card">
+                <h3>Server Management</h3>
+                <p>Learn server setup, maintenance, and troubleshooting skills.</p>
+            </div>
+            <div class="course-card">
+                <h3>Cloud Computing</h3>
+                <p>Explore cloud technologies and build scalable solutions.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-container">
+        <p>&copy; 2024 IT Academy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

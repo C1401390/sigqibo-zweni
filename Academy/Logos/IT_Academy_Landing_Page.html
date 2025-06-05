@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IT Academy: Empowering future IT professionals with top-notch training in front-end development, device repairs, and networking.">
+    <title>IT Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: #1E90FF;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        header .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        header .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        header .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        #hero {
+            background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        #hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        #hero .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        #hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        #hero p {
+            margin: 1rem 0;
+            font-size: 1.25rem;
+        }
+        #hero .cta-button {
+            background: #FFD700;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        #courses {
+            padding: 2rem;
+            background: #F0F8FF;
+        }
+        #courses h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .course-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .course-card h3 {
+            margin-top: 0;
+        }
+        footer {
+            background: #1E90FF;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">IT Academy</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Empowering Future IT Professionals</h1>
+            <p>Master Front-End Development, Device Repairs, and Networking</p>
+            <a href="#courses" class="cta-button">Explore Courses</a>
+        </div>
+    </section>
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <div class="course-cards">
+            <div class="course-card">
+                <h3>Front-End Development</h3>
+                <p>Learn HTML, CSS, JavaScript, and more to build stunning websites.</p>
+            </div>
+            <div class="course-card">
+                <h3>Device Repairs</h3>
+                <p>Get hands-on training for repairing computers, mobiles, and more.</p>
+            </div>
+            <div class="course-card">
+                <h3>Networking</h3>
+                <p>Master networking concepts and become a certified professional.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 IT Academy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master advanced front-end development techniques with in-depth examples, tools, and frameworks.">
+    <title>How to Make Your Website Look Perfect on Any Device</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a  {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>How to Make Your Website Look Perfect on Any Device</h1>
+        <p>Your comprehensive guide to advanced techniques and best practices in front-end development.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#modern-css">Modern CSS Techniques</a></li>
+            <li><a href="#responsive-design">Responsive Design</a></li>
+            <li><a href="#frameworks-libraries">Frameworks and Libraries</a></li>
+            <li><a href="#optimization">Front-End Optimization</a></li>
+            <li><a href="#tools-resources">Tools and Resources</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Responsive Design Section -->
+        <section id="responsive-design">
+            <h2>How to Make Your Website Look Perfect on Any Device</h2>
+            <p>Responsive design ensures your website is accessible and visually appealing across devices. Let’s dive into the essentials:</p>
+
+            <h3>Media Queries and Responsive Breakpoints</h3>
+            <p>Media queries help apply specific styles depending on screen size:</p>
+            <pre>
+                <code>
+/* For tablets */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* For mobile */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+}
+                </code>
+            </pre>
+
+            <h3>Implementing Flexbox and Grid for Dynamic Layouts</h3>
+            <p>These CSS features create fluid layouts:</p>
+            <pre>
+                <code>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+                </code>
+            </pre>
+
+            <h3>Resizing Images and Scaling Fonts</h3>
+            <ul>
+                <li>Use <code>max-width: 100%</code> to make images adapt to parent containers.</li>
+                <li>Apply relative font sizes like <code>em</code> or <code>rem</code> for scalability.</li>
+            </ul>
+            <pre>
+                <code>
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-size: 1rem;
+}
+                </code>
+            </pre>
+
+            <h3>Testing Tools for Responsive Design</h3>
+            <p>Use these tools to verify your design:</p>
+            <ul>
+                <li><a href="https://www.browserstack.com/" target="_blank">BrowserStack</a></li>
+                <li><a href="http://www.responsinator.com/" target="_blank">Responsinator</a></li>
+                <li><a href="https://developer.chrome.com/docs/devtools/device-mode/" target="_blank">Chrome DevTools - Device Mode</a></li>
+            </ul>
+
+            <h3>Further Learning</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout" target="_blank">MDN Web Docs - Flexbox</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">MDN Web Docs - CSS Grid</a></li>
+                <li><a href="https://www.w3schools.com/css/css_rwd_intro.asp" target="_blank">W3Schools - Responsive Web Design</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Master Front-End Development | All Rights Reserved</p>
+        <ul>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

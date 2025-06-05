@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Articles</title>
+  <style>
+    /* General Styles */
+    body {
+      display: flex;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 200px;
+      background-color: #081b29;
+      height: 100vh;
+      padding-top: 20px;
+      position: fixed;
+    }
+
+    .sidebar nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar nav ul li {
+      margin: 20px 0;
+    }
+
+    .sidebar nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+      padding: 10px 20px;
+      border-bottom: solid #00abf0;
+    }
+
+    .sidebar nav ul li a:hover {
+      background-color: #081b29;
+      border-radius: 4px;
+      border-top: #00abf0;
+      color: #00abf0;
+    }
+
+    /* Content Styles */
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .article {
+      border-bottom: 1px solid #00abf0;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+
+    .article h2 {
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .article .date {
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    .article p {
+      margin: 10px 0;
+    }
+
+    .article a {
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    .article a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar Styles (Hidden by default) */
+    .navbar {
+      display: none;
+      justify-content: center;
+      font-size: 18px;
+      color: white;
+      font-weight: 500;
+      margin-left: 35px;
+      transition: color 0.3s;
+      border-bottom: solid;
+      border-radius: 8px;
+      padding: 10px 0;
+      background-color: #f8f8f8;
+    }
+
+    .navbar a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s;
+      margin-right: 15px;
+      text-align: start;
+      color: #f8f8f8;
+    }
+
+    .navbar a:hover, .navbar a.active {
+      color: black;
+    }
+
+    /* Footer Navigation (Hidden by default) */
+    .footer-nav {
+      display: none;
+      justify-content: center;
+      background-color: #081b29;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer-nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer-nav a:hover {
+      color: #00abf0;
+    }
+
+    /* Media Queries for Mobile and Tablet */
+    @media (max-width: 768px) {
+      /* Hide Sidebar on Small Screens */
+      .sidebar {
+        display: none;
+      }
+
+      /* Show Navbar on Small Screens */
+      .navbar {
+        display: flex;
+        justify-content: start;
+        background-color: #081b29;
+        border-bottom: #00abf0 solid 4px;
+        margin: 0;
+        text-align: center;
+        color: #f8f8f8;
+      }
+
+      /* Show Footer Navigation on Small Screens */
+      .footer-nav {
+        display: flex;
+        justify-content: start;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 10px;
+      }
+
+      .navbar a, .footer-nav a {
+        font-size: 18px;
+      }
+    }
+
+    /* Further Adjustments for Small Mobile */
+    @media (max-width: 480px) {
+      .navbar a, .footer-nav a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="Academy/academy.html">Academy</a></li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Top Navigation Bar for Small Screens -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="content">
+    <div class="article">
+      <h2>Front-End Development Tutorials</h2>
+      <p>Published on: <span class="date">2024-11-15</span></p>
+      <p>Front-end development is all about creating the visual and interactive aspects of a website that users interact with directly. It involves using technologies like HTML, CSS, and JavaScript to build the structure, design, and functionality of web pages. In this tutorial series, we'll cover the basics of HTML, CSS, and JavaScript, and guide you through creating your own responsive and interactive web pages.</p>
+      <a href="html-article.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Mastering Front-End Development: Advanced Techniques and Best Practices</h2>
+      <p>Published on: <span class="date">2024-11-15</span></p>
+      <p>Front-end development goes beyond creating static web pages; it involves crafting interactive, responsive, and visually appealing user interfaces. In this advanced guide, we will explore key topics, including modern CSS techniques, JavaScript optimizations, and leveraging frameworks to enhance productivity. Whether you are a budding developer or an experienced coder, this article will provide actionable insights and examples to refine your skills.</p>
+      <a href="2nd-html-article.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>In-Depth CSS Framework Comparisons: Bootstrap vs. Tailwind CSS</h2>
+      <p>Published on: <span class="date">2024-11-15</span></p>
+      <p>CSS frameworks significantly simplify front-end development by providing pre-defined styles and components. Among the popular frameworks, Bootstrap and Tailwind CSS stand out as two contrasting approaches to modern web development. Let’s explore their features, advantages, and disadvantages to help developers make informed decisions.</p>
+      <a href="Bootstrap-vs-tailwind.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Affiliate articles</h2>
+      <p>Published on: <span class="date">2024-10-15</span></p>
+      <p>To prepare your website for affiliates while maintaining a focus on front-end development, you should prioritize topics and articles that enhance user experience, optimize performance, and boost SEO. These areas are critical for attracting and retaining visitors, which directly impacts affiliate marketing success. Below are suggested front-end topics and articles you can cover before moving on to affiliate-specific optimization.</p>
+      <a href="Affiliate-articles.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>How to Optimize Your HTML, CSS, and JavaScript for Better SEO</h2>
+      <p>Published on: <span class="date">2024-11-05</span></p>
+      <p>Your comprehensive guide to advanced techniques and best practices in front-end development.</p>
+      <a href="SEO-article.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Essential Front-End Tips for a Lightning-Fast Website</h2>
+      <p>Published on: <span class="date">2024-09-05</span></p>
+      <p>In today’s fast-paced digital world, website speed is crucial for user experience, search engine optimization (SEO), and overall performance. This article provides essential tips to help front-end developers optimize their websites for lightning-fast performance.</p>
+      <a href="Mastering-Front-End-Development.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Designing Effective Call-to-Action Buttons with CSS and Animations</h2>
+      <p>Published on: <span class="date">2024-09-05</span></p>
+      <p>Call-to-action (CTA) buttons are vital for guiding users to take desired actions, whether it's signing up, making a purchase, or exploring more. This article will explore how to design visually appealing and effective CTA buttons using CSS, animations, and best practices for placement, size, and responsiveness.</p>
+      <a href="Call-to-Action-buttons.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>How to Make Your Website Look Perfect on Any Device</h2>
+      <p>Published on: <span class="date">2024-08-05</span></p>
+      <p>Responsive design ensures your website is accessible and visually appealing across devices. Let’s dive into the essentials:</p>
+      <a href="website-for-any-devices.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Front-End Design Tips for a User-Friendly Affiliate Website</h2>
+      <p>Published on: <span class="date">2023-08-05</span></p>
+      <p><p>Your comprehensive guide to advanced techniques and best practices in front-end development.</p>
+      <a href="Tips-for-a-User-Friendly-Affiliate-Website.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Building Websites Everyone Can Use: Accessibility in Front-End Development</h2>
+      <p>Published on: <span class="date">2024-11-23</span></p>
+      <p><p>Accessibility starts with ensuring that your website can be navigated using a keyboard and is compatible with screen readers:</p>
+      <a href="Building-Websites-Everyone-Can-Use.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Front-End Tricks for High-Converting Affiliate Landing Pages</h2>
+      <p>Published on: <span class="date">2024-11-19</span></p>
+      <p><p>Learn essential front-end tricks to create high-converting affiliate landing pages with content structuring, social proof, and more.</p>
+      <a href="High-Converting-Affiliate.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>The Front-End Developer's Guide to Image and Media Optimization</h2>
+      <p>Published on: <span class="date">2024-11-10</span></p>
+      <p><p>Learn how to optimize images and media for the web using modern techniques and tools.</p>
+      <a href="Guide-to-Image-and-Media-Optimization.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>How to Use JavaScript to Track and Improve User Engagement.</h2>
+      <p>Published on: <span class="date">2024-05-10</span></p>
+      <p>Learn how to use JavaScript to track user interactions and improve engagement on your website.</p>
+      <a href="JavaScript-to-Track-and-Improve-user.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Creating Custom Widgets for Affiliate Promotions Using HTML, CSS, and JavaScript.</h2>
+      <p>Published on: <span class="date">2024-03-10</span></p>
+      <p><p>Learn how to create custom widgets for affiliate promotions using HTML, CSS, and JavaScript.</p>
+      <a href="Widgets-for-Affiliate-Promotions.html">Read more...</a>
+    </div>
+  </div>
+
+  <!-- Footer Navigation for Small Screens -->
+  <div class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="projects.html">Projects</a>
+    <a href="articles.html">Articles</a>
+  </div>
+</body>
+</html>

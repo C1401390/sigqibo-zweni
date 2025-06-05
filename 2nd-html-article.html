@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master advanced front-end development techniques with in-depth examples, tools, and frameworks.">
+    <title>Mastering Front-End Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #3498db;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    overflow-x: auto;
+    border-left: 4px solid #3498db;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mastering Front-End Development</h1>
+        <p>Your comprehensive guide to advanced techniques and best practices in front-end development.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#modern-css">Modern CSS Techniques</a></li>
+            <li><a href="#javascript-apps">JavaScript for Web Apps</a></li>
+            <li><a href="#frameworks-libraries">Frameworks and Libraries</a></li>
+            <li><a href="#optimization">Front-End Optimization</a></li>
+            <li><a href="#tools-resources">Tools and Resources</a></li>
+        </ul>
+    </nav>
+    <!--Side Bar-->
+    <div class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="articles.html">Articles</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    <main>
+        <!-- Modern CSS Section -->
+        <section id="modern-css">
+            <h2>Modern CSS Techniques</h2>
+            <p>Explore advanced CSS features like custom properties, pseudo-classes, and complex layouts with Grid and Flexbox.</p>
+            <h3>CSS Variables</h3>
+            <pre>
+                <code>:root {
+    --primary-color: #3498db;
+    --font-size: 16px;
+}
+
+body {
+    color: var(--primary-color);
+    font-size: var(--font-size);
+}</code>
+            </pre>
+            <h3>Grid Layout Example</h3>
+            <pre>
+                <code>.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}</code>
+            </pre>
+        </section>
+
+        <!-- JavaScript Section -->
+        <section id="javascript-apps">
+            <h2>JavaScript for Web Apps</h2>
+            <p>Learn how to build interactive features with ES6+ JavaScript, including event delegation and API fetching.</p>
+            <h3>Event Delegation Example</h3>
+            <pre>
+                <code>document.querySelector(".parent").addEventListener("click", (e) => {
+    if (e.target && e.target.matches(".child")) {
+        console.log("Child element clicked!");
+    }
+});</code>
+            </pre>
+        </section>
+
+        <!-- Frameworks Section -->
+        <section id="frameworks-libraries">
+            <h2>Frameworks and Libraries</h2>
+            <p>Boost productivity with tools like Bootstrap, TailwindCSS, and React.</p>
+            <h3>Bootstrap Grid Example</h3>
+            <pre>
+                <code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-6"&gt;Column 1&lt;/div&gt;
+        &lt;div class="col-md-6"&gt;Column 2&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code>
+            </pre>
+        </section>
+
+        <!-- Optimization Section -->
+        <section id="optimization">
+            <h2>Front-End Optimization</h2>
+            <p>Improve performance, accessibility, and SEO with these techniques.</p>
+            <h3>Lazy Loading Example</h3>
+            <pre>
+                <code>&lt;img src="example.jpg" loading="lazy" alt="Example image"&gt;</code>
+            </pre>
+        </section>
+
+        <!-- Tools and Resources Section -->
+        <section id="tools-resources">
+            <h2>Tools and Resources</h2>
+            <ul>
+                <li><a href="https://caniuse.com" target="_blank">Can I Use</a></li>
+                <li><a href="https://css-tricks.com" target="_blank">CSS Tricks</a></li>
+                <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Master Front-End Development | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

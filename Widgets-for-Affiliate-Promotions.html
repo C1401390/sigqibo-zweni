@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to create custom widgets for affiliate promotions using HTML, CSS, and JavaScript.">
+    <title>Creating Custom Widgets for Affiliate Promotions Using HTML, CSS, and JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a  {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, footer {
+                padding: 15px 10px;
+            }
+            header h1, footer p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Creating Custom Widgets for Affiliate Promotions Using HTML, CSS, and JavaScript</h1>
+        <p>Learn how to create custom widgets for affiliate promotions using HTML, CSS, and JavaScript.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#dynamic-banners">Dynamic Affiliate Banners</a></li>
+            <li><a href="#sliders-carousels">Sliders and Carousels</a></li>
+            <li><a href="#modals">Modals for Pop-Ups and Lead Magnets</a></li>
+            <li><a href="#tracking-performance">Tracking Widget Performance</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="dynamic-banners">
+            <h2>Designing Dynamic Affiliate Banners</h2>
+            <p>Creating dynamic affiliate banners can significantly increase engagement and conversions:</p>
+            <ul>
+                <li><strong>HTML Structure:</strong> Define the basic structure of the banner using HTML.</li>
+                <li><strong>CSS Styling:</strong> Apply styles to make the banner visually appealing.</li>
+                <li><strong>JavaScript Interactivity:</strong> Add interactivity using JavaScript to make the banner dynamic.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: Dynamic Affiliate Banner -->
+<div class="banner">
+    <a href="affiliate-link.html" target="_blank">
+        <img src="banner-image.jpg" alt="Affiliate Banner">
+    </a>
+    <p class="cta">Click here for an exclusive offer!</p>
+</div>
+
+<style>
+.banner {
+    position: relative;
+    text-align: center;
+}
+.banner img {
+    width: 100%;
+    height: auto;
+}
+.banner .cta {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+</style>
+
+<script>
+document.querySelector('.banner').addEventListener('click', function() {
+    alert('You clicked the affiliate banner!');
+});
+</script>
+                </code>
+            </pre>
+        </section>
+
+        <section id="sliders-carousels">
+            <h2>Building Sliders and Carousels to Showcase Offers</h2>
+            <p>Sliders and carousels can effectively showcase multiple offers or products:</p>
+            <ul>
+                <li><strong>HTML Structure:</strong> Create a container for the slider and individual slides.</li>
+                <li><strong>CSS Styling:</strong> Style the container and slides for a seamless transition effect.</li>
+                <li><strong>JavaScript Functionality:</strong> Use JavaScript to add functionality, such as automatic sliding or manual navigation.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Example: Slider Carousel -->
+<div class="carousel">
+    <div class="slides">
+        <div class="slide">
+            <img src="offer1.jpg" alt="Offer 1">
+        </div>
+        <div class="slide">
+            <img src="offer2.jpg" alt="Offer 2">
+        </div>
+        <div class="slide">
+            <img src="offer3.jpg" alt="Offer 3">
+        </div>
+    </div>
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>
+</div>
+
+<style>
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+button.prev { left: 10px; }
+button.next { right: 10px; }
+</style>
+
+<script>
+let currentIndex = 0;
+const slides = document.querySelector('.slides');
+const slideCount = slides.children.length;
+
+document.querySelector('.next').addEventListener('click', function() {
+    currentIndex = (currentIndex + 1) % slideCount;
+    updateCarousel();
+});
+
+document.querySelector('.prev').addEventListener('click', function() {
+    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+    updateCarousel();
+});
+
+function updateCarousel() {
+    const offset = currentIndex * -100;
+    slides.style.transform = `translateX(${offset}%)`;
+}
+</script>
+                </code>
+            </pre>
+        </section>
+
+        <section id="modals">
+            <h2>Using Modals for Pop-Ups and Lead Magnets</h2>
+            <p>Modals can be used effectively for pop-ups and lead magnets to capture user attention:</p>
+            <ul>
+                <li><strong>HTML Structure:</strong> Create the basic structure for the modal.</li>
+                <li><strong>CSS Styling:</strong> Style the modal to ensure it stands out and is visually appealing.</li>
+                <li><strong>JavaScript Interactivity:</strong> Add interactivity to open and close the modal.</li>
+            </ul>
+            <pre>
+                <code>
+<!-- Modal Pop-Up Example -->
+<button id="openModal">Open Modal</button>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Lead Magnet</h2>
+        <p>Sign up for our newsletter and get a free eBook!</p>
+        <form action="submit-form.html" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<style>
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center; 
+    align-items: center; 
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+</style>
+<script>
+    const modal = document.getElementById("myModal");
+const openModalButton = document.getElementById("openModal");
+const closeModalButton = modal.querySelector(".close");
+
+// Open modal
+openModalButton.addEventListener("click", () => {
+    modal.style.display = "flex"; // Use flex for centering
+});
+
+// Close modal
+closeModalButton.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+</script>
+</main>
+    <footer>
+        <p>© 2024 Master Front-End Development | All Rights Reserved</p>
+        <ul>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

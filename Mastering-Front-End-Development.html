@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master advanced front-end development techniques with in-depth examples, tools, and frameworks.">
+    <title>Mastering Front-End Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a  {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+         /*Media queries on all pages*/
+         @media (max-width: 768px) {
+    .mobile-only {
+      display: block;
+    }
+    body {
+      padding: 0 10px; /* Adjust body padding for mobile */
+    }
+  
+    .header {
+      padding: 10px 5%;
+      flex-direction: column; /* Stack header elements vertically */
+      align-items: center;
+    }
+  
+    .logo {
+      font-size: 20px;
+    }
+  
+    .navbar {
+      font-size: 16px;
+      margin-left: 0;
+    }
+  
+    .navbar a {
+      display: block;
+      margin: 5px 0;
+      justify-content: space-between;
+      margin-right: 8px;
+    }
+  
+    .home {
+      padding: 5%;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .home-content h1 {
+      font-size: 2em;
+    }
+  
+    .home-content h3 {
+      font-size: 1.2em;
+    }
+  
+    .btn-box {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .btn-box a {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .Profile-pic-div {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .sidebar {
+      width: 100%;
+      position: relative;
+      top: 0;
+      height: auto;
+      padding: 10px 0;
+      display: none;
+    }
+  
+    .sidebar a {
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .footer {
+      padding: 10px 0;
+      text-align: center;
+      margin-left: auto;
+      margin-top: 70px;
+    }
+  
+    .footer .row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer .col-md-4 {
+      margin-bottom: 20px;
+    }
+  
+    .content {
+      padding: 5%;
+    }
+  
+    .skills {
+      margin: 20px 0;
+    }
+  
+    .skill-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .skill-btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .home-sci {
+      flex-direction: inherit;
+      align-items: center;
+    }
+  
+    .home-sci a {
+      margin: 5px 0;
+      margin-right: 8px;
+    }
+  }
+  
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mastering Front-End Development</h1>
+        <p>Your comprehensive guide to advanced techniques and best practices in front-end development.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#modern-css">Modern CSS Techniques</a></li>
+            <li><a href="#javascript-apps">JavaScript for Web Apps</a></li>
+            <li><a href="#frameworks-libraries">Frameworks and Libraries</a></li>
+            <li><a href="#optimization">Front-End Optimization</a></li>
+            <li><a href="#tools-resources">Tools and Resources</a></li>
+            <li><a href="#lightning-fast-website">Lightning-Fast Website Tips</a></li>
+        </ul>
+        <ul>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="articles.html">Articles</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Modern CSS Section -->
+        <section id="modern-css">
+            <h2>Modern CSS Techniques</h2>
+            <p>Explore advanced CSS features like custom properties, pseudo-classes, and complex layouts with Grid and Flexbox.</p>
+            <h3>CSS Variables</h3>
+            <pre>
+                <code>:root {
+    --primary-color: #3498db;
+    --font-size: 16px;
+}
+
+body {
+    color: var(--primary-color);
+    font-size: var(--font-size);
+}</code>
+            </pre>
+            <h3>Grid Layout Example</h3>
+            <pre>
+                <code>.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}</code>
+            </pre>
+        </section>
+
+        <!-- New Section: Lightning-Fast Website Tips -->
+        <section id="lightning-fast-website">
+            <h2>Essential Front-End Tips for a Lightning-Fast Website</h2>
+            <p>Speed is crucial for website success. Here are some essential front-end techniques to ensure your website loads lightning-fast:</p>
+
+            <h3>Lazy Loading for Images and Videos</h3>
+            <p>Reduce initial load time by deferring the loading of non-essential assets.</p>
+            <pre>
+                <code>&lt;img src="example.jpg" loading="lazy" alt="Example image"&gt;</code>
+            </pre>
+
+            <h3>Optimizing and Compressing Assets</h3>
+            <p>Use tools like <strong>ImageOptim</strong> and <strong>UglifyJS</strong> to reduce file sizes without sacrificing quality.</p>
+
+            <h3>Using CSS Sprites and Inline SVGs</h3>
+            <p>Minimize HTTP requests by combining small images into a single file or using scalable vector graphics (SVGs).</p>
+
+            <h3>Utilizing Content Delivery Networks (CDNs)</h3>
+            <p>Serve assets from servers closer to the user to reduce latency. Examples include Cloudflare and AWS CloudFront.</p>
+
+            <h3>Minifying and Bundling CSS/JS Files</h3>
+            <p>Remove unnecessary characters from your code to improve loading speed. Combine multiple files to reduce HTTP requests.</p>
+
+            <h3>Adding Caching Headers and Reducing HTTP Requests</h3>
+            <p>Enable caching on your server to store assets locally and minimize repeated downloads.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Master Front-End Development | All Rights Reserved</p>
+        <ul>
+            <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
+            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
+            <li><a href="https://w3schools.com" target="_blank">W3Schools</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
