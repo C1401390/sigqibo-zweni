@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Articles on front-end development, cybersecurity, and digital safety by Sigqibo Zweni." />
   <meta name="author" content="Sigqibo Zweni" />
-  <meta name="keywords" content="WhatsApp hijack, South Africa, SIM swap, social media hacks, recover account, MTN fraud">
+  <meta name="keywords" content="WhatsApp hijack, South Africa, SIM swap, social media hacks, recover account, MTN fraud, front-end development, JavaScript, CSS frameworks, affiliate UI, SEO optimization">
   <meta name="robots" content="index, follow">
   <title>Articles | Sigqibo Zweni</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -18,75 +16,50 @@
       color: #1f2937;
       line-height: 1.6;
     }
-
     a {
       color: #007bff;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
-    .sidebar {
-      width: 200px;
+    header {
       background-color: #081b29;
-      height: 100vh;
-      padding-top: 20px;
-      position: fixed;
-    }
-
-    .sidebar nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .sidebar nav ul li {
-      margin: 20px 0;
-    }
-
-    .sidebar nav ul li a {
+      padding: 1rem;
       color: white;
-      text-decoration: none;
-      font-size: 18px;
-      display: block;
-      padding: 10px 20px;
-      border-bottom: solid #00abf0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
-
-    .sidebar nav ul li a:hover {
-      background-color: #081b29;
-      border-radius: 4px;
+    .menu {
+      display: flex;
+      gap: 1rem;
+    }
+    .menu a {
       color: #00abf0;
+      font-weight: 600;
     }
-
     .content {
-      margin-left: 200px;
       padding: 20px;
-      flex: 1;
     }
-
     h1 {
       font-size: 2em;
       margin-bottom: 20px;
     }
-
     .article {
       border-bottom: 1px solid #00abf0;
       margin-bottom: 20px;
       padding-bottom: 20px;
     }
-
     .article h2 {
       font-size: 1.5em;
       color: #333;
     }
-
     .article .date {
       font-size: 0.9em;
       color: #777;
     }
-
     .note {
       background: #e0f2fe;
       padding: 0.8rem;
@@ -94,7 +67,6 @@
       margin: 1rem 0;
       border-radius: 6px;
     }
-
     .cta {
       background: #1e40af;
       color: #fff;
@@ -103,20 +75,17 @@
       text-align: center;
       margin: 2rem 0;
     }
-
     .cta a {
       color: #fff;
       text-decoration: underline;
       font-weight: 600;
     }
-
     .share-buttons {
       background: #f3f4f6;
       padding: 1rem;
       margin: 1rem 0;
       border-radius: 6px;
     }
-
     .floating-help {
       position: fixed;
       bottom: 20px;
@@ -129,7 +98,6 @@
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-
     footer {
       background: #081b29;
       color: white;
@@ -137,167 +105,162 @@
       text-align: center;
       margin-top: 2rem;
     }
-
     footer a {
       color: #00abf0;
       margin: 0 10px;
     }
-
     footer a:hover {
       text-decoration: underline;
     }
+    .search-box {
+      margin: 1rem 0;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .author-bio {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    .tags {
+      margin-top: 0.5rem;
+    }
+    .tags span {
+      background: #e2e8f0;
+      padding: 5px 10px;
+      margin-right: 5px;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      color: #374151;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <div class="sidebar">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="articles.html" class="active">Articles</a></li>
-        <li><a href="Academy/academy.html">Academy</a></li>
-      </ul>
-    </nav>
-  </div>
-
+  <header>
+    <div><strong>Sigqibo Zweni</strong> | Articles</div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="Academy/academy.html">Academy</a>
+    </div>
+  </header>
   <div class="content">
-    <div class="note">
-      <strong>TL;DR:</strong> WhatsApp scams and number hijacking are rising in South Africa. Learn how to spot fake OTPs, protect your SIM, and recover stolen accounts.
-    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search articles..." />
+    </div><div class="note">
+  <strong>TL;DR:</strong> WhatsApp scams and number hijacking are rising in South Africa. Learn how to spot fake OTPs, protect your SIM, and recover stolen accounts.
+</div>
 
-    <div class="share-buttons">
-      <p><strong>📣 Help protect your friends — share this article:</strong></p>
-      <a href="#">Share on Facebook</a> |
-      <a href="#">Share on Twitter</a> |
-      <a href="#">Share on WhatsApp</a>
-    </div>
+<div class="share-buttons">
+  <p><strong>📣 Help protect your friends — share this article:</strong></p>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sigqibozweni.co.za/articles.html">Facebook</a> |
+  <a href="https://twitter.com/intent/tweet?url=https://sigqibozweni.co.za/articles.html">Twitter</a> |
+  <a href="https://api.whatsapp.com/send?text=https://sigqibozweni.co.za/articles.html">WhatsApp</a>
+</div>
 
-    <h1>Cybersecurity & Social Media Protection Articles</h1>
-    <div class="article">
-      <h2>How Hackers Steal Your Social Media — And How to Stop Them</h2>
-      <p class="date">Published on: 2025-06-19</p>
-      <p>This emotionally driven viral article walks you through real stories, social media impersonation, WhatsApp number hijacking in South Africa, and the step-by-step tactics to protect yourself online.</p>
-      <a href="Social_Media_Security_FINAL_Full_Article.html">Read full article</a>
-    </div>
-
-    <div class="note">
-      <strong>Written by Sigqibo Zweni</strong> — cybersecurity enthusiast & educator helping South Africans protect their digital lives. Follow on <a href="#">Twitter</a>.
-    </div>
-
-    <div class="cta">
-      💌 Get monthly cybersecurity tips & alerts. <br>
-      <a href="subscribe.html">Subscribe to our newsletter</a>
-    </div>
-
-    <div class="article">
-      <h3>🔒 Free Tools You Can Use Today</h3>
-      <ul>
-        <li><a href="https://bitwarden.com">Bitwarden</a> — Secure password manager</li>
-        <li><a href="https://www.malwarebytes.com">Malwarebytes</a> — Malware scanner</li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a> — 2FA app</li>
-      </ul>
-    </div>
-
-    <div class="article">
-      <h3>📚 Related Articles</h3>
-      <ul>
-        <li><a href="#">Spotting Phishing Scams in South Africa</a></li>
-        <li><a href="#">Complete Mobile Security Guide</a></li>
-      </ul>
-    </div>
-
-    <h1>Front-End Web Development Articles</h1>
-    <div class="article">
-      <h2>Front-End Development Tutorials</h2>
-      <p class="date">2024-11-15</p>
-      <p>Front-end development is all about creating the visual and interactive aspects of a website. Learn HTML, CSS, and JavaScript from scratch and build responsive web pages.</p>
-      <a href="html-article.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Mastering Front-End Development</h2>
-      <p class="date">2024-11-15</p>
-      <p>Go beyond static sites — build dynamic and advanced user interfaces with modern CSS, JavaScript, and front-end frameworks.</p>
-      <a href="2nd-html-article.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Bootstrap vs. Tailwind CSS</h2>
-      <p class="date">2024-11-15</p>
-      <p>Compare the two most popular CSS frameworks and decide which one is right for your next web project.</p>
-      <a href="Bootstrap-vs-tailwind.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Affiliate Articles</h2>
-      <p class="date">2024-10-15</p>
-      <p>Prepare your front-end for affiliate marketing with high-performing layouts and SEO-focused designs.</p>
-      <a href="Affiliate-articles.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>HTML/CSS/JS SEO Optimization</h2>
-      <p class="date">2024-11-05</p>
-      <p>Optimize your front-end code for faster loading and better search engine visibility.</p>
-      <a href="SEO-article.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Lightning-Fast Website Tips</h2>
-      <p class="date">2024-09-05</p>
-      <p>Speed matters — learn the top front-end tricks to reduce load times and boost user retention.</p>
-      <a href="Mastering-Front-End-Development.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Call-to-Action Button Design</h2>
-      <p class="date">2024-09-05</p>
-      <p>Craft stunning CTA buttons with animation, color contrast, and persuasive text that converts.</p>
-      <a href="Call-to-Action-buttons.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Responsive Design Essentials</h2>
-      <p class="date">2024-08-05</p>
-      <p>Make your website beautiful and functional across every screen size and device.</p>
-      <a href="website-for-any-devices.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Affiliate Website UI Tips</h2>
-      <p class="date">2023-08-05</p>
-      <p>Boost affiliate sales by improving your front-end design flow and user experience.</p>
-      <a href="Tips-for-a-User-Friendly-Affiliate-Website.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Accessibility in Front-End</h2>
-      <p class="date">2024-11-23</p>
-      <p>Design for everyone — build accessible web experiences with keyboard navigation and ARIA roles.</p>
-      <a href="Building-Websites-Everyone-Can-Use.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>High-Converting Affiliate Pages</h2>
-      <p class="date">2024-11-19</p>
-      <p>Use conversion design techniques to optimize your front-end layout and visual cues.</p>
-      <a href="High-Converting-Affiliate.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Media Optimization Guide</h2>
-      <p class="date">2024-11-10</p>
-      <p>Efficiently compress and load images, videos, and assets to speed up your web performance.</p>
-      <a href="Guide-to-Image-and-Media-Optimization.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>JavaScript for Engagement</h2>
-      <p class="date">2024-05-10</p>
-      <p>Track how users behave on your site using custom JavaScript and improve engagement.</p>
-      <a href="JavaScript-to-Track-and-Improve-user.html">Read more...</a>
-    </div>
-    <div class="article">
-      <h2>Affiliate Promo Widgets</h2>
-      <p class="date">2024-03-10</p>
-      <p>Build interactive HTML/CSS/JS widgets to boost clicks and earnings on your affiliate offers.</p>
-      <a href="Widgets-for-Affiliate-Promotions.html">Read more...</a>
-    </div>
+<h1>Cybersecurity & Social Media Protection Articles</h1>
+<div class="article">
+  <h2>How Hackers Steal Your Social Media — And How to Stop Them</h2>
+  <p class="date">2025-06-19</p>
+  <p>This emotionally driven viral article walks you through real stories, social media impersonation, WhatsApp number hijacking in South Africa, and the step-by-step tactics to protect yourself online.</p>
+  <a href="Social_Media_Security_FINAL_Full_Article.html">Read full article</a>
+  <div class="author-bio">
+    <strong>Written by Sigqibo Zweni</strong> — cybersecurity enthusiast, web developer & digital educator helping South Africans protect their digital lives.
   </div>
+  <div class="tags">
+    <span>#cybersecurity</span><span>#socialmedia</span><span>#SIMswap</span>
+  </div>
+</div>
 
+<div class="cta">
+  💌 Get monthly cybersecurity tips & alerts. <br>
+  <a href="subscribe.html">Subscribe to our newsletter</a>
+</div>
+
+<h1>Front-End Web Development Articles</h1>
+<div class="article">
+  <h2>Front-End Development Tutorials</h2>
+  <p class="date">2024-11-15</p>
+  <p>Learn HTML, CSS, and JavaScript from scratch and build responsive websites.</p>
+  <a href="html-article.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>Mastering Front-End Development</h2>
+  <p class="date">2024-11-15</p>
+  <p>Build advanced user interfaces with modern CSS and front-end frameworks.</p>
+  <a href="2nd-html-article.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>Bootstrap vs. Tailwind CSS</h2>
+  <p class="date">2024-11-15</p>
+  <p>Compare the top two CSS frameworks and pick the right one for your project.</p>
+  <a href="Bootstrap-vs-tailwind.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>Affiliate Articles</h2>
+  <p class="date">2024-10-15</p>
+  <p>Design affiliate-friendly layouts and UI for marketing-focused websites.</p>
+  <a href="Affiliate-articles.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>HTML/CSS/JS SEO Optimization</h2>
+  <p class="date">2024-11-05</p>
+  <p>Improve search engine visibility with semantic HTML and optimized code.</p>
+  <a href="SEO-article.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>Call-to-Action Button Design</h2>
+  <p class="date">2024-09-05</p>
+  <p>Create high-converting CTAs with smart UI design patterns and colors.</p>
+  <a href="Call-to-Action-buttons.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>Responsive Design Essentials</h2>
+  <p class="date">2024-08-05</p>
+  <p>Build mobile-first layouts that work across phones, tablets, and desktops.</p>
+  <a href="website-for-any-devices.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>JavaScript for Engagement</h2>
+  <p class="date">2024-05-10</p>
+  <p>Track user behavior and boost interaction using simple JavaScript tools.</p>
+  <a href="JavaScript-to-Track-and-Improve-user.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>Accessibility in Front-End</h2>
+  <p class="date">2024-11-23</p>
+  <p>Ensure your websites are usable by everyone, including users with disabilities.</p>
+  <a href="Building-Websites-Everyone-Can-Use.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>Media Optimization Guide</h2>
+  <p class="date">2024-11-10</p>
+  <p>Speed up your website by optimizing images, videos, and assets for the web.</p>
+  <a href="Guide-to-Image-and-Media-Optimization.html">Read more...</a>
+</div>
+<div class="article">
+  <h2>Affiliate UI Tips</h2>
+  <p class="date">2023-08-05</p>
+  <p>Enhance affiliate performance through smart interface design principles.</p>
+  <a href="Tips-for-a-User-Friendly-Affiliate-Website.html">Read more...</a>
+</div>
+
+  </div>
   <a href="https://www.facebook.com/hacked" target="_blank" class="floating-help">🚨 I’ve Been Hacked</a>
-
   <footer>
     <p>&copy; 2025 Sigqibo Zweni. All rights reserved.</p>
     <p>
@@ -309,5 +272,4 @@
     </p>
   </footer>
 </body>
-
-</html>
+    </html>
