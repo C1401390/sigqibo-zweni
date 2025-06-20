@@ -1,148 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Articles on front-end development, cybersecurity, and digital safety by Sigqibo Zweni." />
+  <meta name="author" content="Sigqibo Zweni" />
   <title>Articles | Sigqibo Zweni</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f9fafb;
-      color: #111;
       margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #081b29;
+      height: 100vh;
+      padding-top: 20px;
+      position: fixed;
+    }
+
+    .sidebar nav ul {
+      list-style-type: none;
       padding: 0;
     }
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
+
+    .sidebar nav ul li {
+      margin: 20px 0;
     }
-    h1, h2 {
-      color: #1f2937;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-    }
-    h2 {
-      font-size: 1.6rem;
-      margin-top: 2rem;
-      border-bottom: 2px solid #1e40af;
-      padding-bottom: 0.3rem;
-    }
-    .article-card {
-      background: white;
-      padding: 1rem 1.5rem;
-      margin: 1rem 0;
-      border-left: 4px solid #1e40af;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      border-radius: 8px;
-    }
-    .article-card h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
-      color: #1e3a8a;
-    }
-    .article-card p {
-      margin: 0.5rem 0 0;
-    }
-    .article-card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #1e40af;
+
+    .sidebar nav ul li a {
+      color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-size: 18px;
+      display: block;
+      padding: 10px 20px;
+      border-bottom: solid #00abf0;
     }
-    .article-card a:hover {
+
+    .sidebar nav ul li a:hover {
+      background-color: #081b29;
+      border-radius: 4px;
+      color: #00abf0;
+    }
+
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .article {
+      border-bottom: 1px solid #00abf0;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
+
+    .article h2 {
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .article .date {
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    footer {
+      background: #081b29;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: #00abf0;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Articles Library</h1>
+  <div class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="articles.html" class="active">Articles</a></li>
+        <li><a href="Academy/academy.html">Academy</a></li>
+      </ul>
+    </nav>
+  </div>
 
-    <h2>🧰 Front-End Development</h2>
-
-    <div class="article-card">
-      <h3>Front-End Development Tutorials</h3>
-      <p>Learn HTML, CSS, and JavaScript basics to build your first responsive website.</p>
-      <a href="html-article.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Mastering Front-End Development</h3>
-      <p>Explore advanced techniques, modern frameworks, and front-end best practices.</p>
-      <a href="2nd-html-article.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Bootstrap vs Tailwind CSS</h3>
-      <p>Compare two of the most popular CSS frameworks for responsive design.</p>
-      <a href="Bootstrap-vs-tailwind.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Affiliate Articles</h3>
-      <p>Prepare your site for affiliate marketing while focusing on user experience.</p>
-      <a href="Affiliate-articles.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Optimizing HTML, CSS, and JS for SEO</h3>
-      <p>Improve your site’s performance and discover front-end SEO best practices.</p>
-      <a href="SEO-article.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Lightning-Fast Websites</h3>
-      <p>Learn how to dramatically improve your site's load speed and performance.</p>
-      <a href="Mastering-Front-End-Development.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Call-to-Action Buttons</h3>
-      <p>Design and animate CTA buttons that convert users using CSS.</p>
-      <a href="Call-to-Action-buttons.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Responsive Design</h3>
-      <p>How to make your website look perfect across all devices.</p>
-      <a href="website-for-any-devices.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>User-Friendly Affiliate Websites</h3>
-      <p>Best practices to design affiliate sites that convert and engage.</p>
-      <a href="Tips-for-a-User-Friendly-Affiliate-Website.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Accessibility in Front-End</h3>
-      <p>Ensure everyone, including people with disabilities, can use your website.</p>
-      <a href="Building-Websites-Everyone-Can-Use.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>High-Converting Landing Pages</h3>
-      <p>Front-end tricks for building powerful affiliate landing pages.</p>
-      <a href="High-Converting-Affiliate.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Image & Media Optimization</h3>
-      <p>Techniques to optimize images and videos for performance and speed.</p>
-      <a href="Guide-to-Image-and-Media-Optimization.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>JavaScript & User Engagement</h3>
-      <p>Track interactions and increase user activity on your site with JS.</p>
-      <a href="JavaScript-to-Track-and-Improve-user.html">Read More →</a>
-    </div>
-    <div class="article-card">
-      <h3>Custom Affiliate Widgets</h3>
-      <p>Create engaging custom widgets with HTML, CSS, and JavaScript.</p>
-      <a href="Widgets-for-Affiliate-Promotions.html">Read More →</a>
+  <div class="content">
+    <h1>Cybersecurity & Social Media Protection Articles</h1>
+    <div class="article">
+      <h2>How Hackers Steal Your Social Media — And How to Stop Them</h2>
+      <p class="date">Published on: 2025-06-19</p>
+      <p>This emotionally driven viral article walks you through real stories, social media impersonation, WhatsApp number hijacking in South Africa, and the step-by-step tactics to protect yourself online.</p>
+      <a href="social-media-hacking.html">Read full article</a>
     </div>
 
-    <h2>🛡️ Cybersecurity</h2>
-
-    <div class="article-card">
-      <h3>How Hackers Steal Your Social Media — And How to Stop Them</h3>
-      <p>How South Africans are losing WhatsApp, Facebook, TikTok, and Gmail accounts — and how to defend yourself.</p>
-      <a href="Social_Media_Security_FINAL_Full_Article.html">Read More →</a>
+    <h1>Front-End Web Development Articles</h1>
+    <div class="article">
+      <h2>Front-End Development Tutorials</h2>
+      <p class="date">Published on: 2024-11-15</p>
+      <p>Explore the basics of HTML, CSS, and JavaScript to create responsive and interactive web pages.</p>
+      <a href="html-article.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Mastering Front-End Development</h2>
+      <p class="date">Published on: 2024-11-15</p>
+      <p>Advanced techniques and best practices to level up your front-end development skills.</p>
+      <a href="2nd-html-article.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Bootstrap vs. Tailwind CSS</h2>
+      <p class="date">Published on: 2024-11-15</p>
+      <p>A comparison of two major CSS frameworks, exploring strengths and ideal use-cases.</p>
+      <a href="Bootstrap-vs-tailwind.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Affiliate Articles</h2>
+      <p class="date">Published on: 2024-10-15</p>
+      <p>How to align your front-end efforts with affiliate success.</p>
+      <a href="Affiliate-articles.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>SEO for Front-End Developers</h2>
+      <p class="date">Published on: 2024-11-05</p>
+      <p>Optimize HTML, CSS, and JavaScript for better search engine performance.</p>
+      <a href="SEO-article.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Website Speed Optimization</h2>
+      <p class="date">Published on: 2024-09-05</p>
+      <p>Boost load times and user experience with front-end performance tips.</p>
+      <a href="Mastering-Front-End-Development.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Designing CTA Buttons</h2>
+      <p class="date">Published on: 2024-09-05</p>
+      <p>Create compelling, animated call-to-action buttons using CSS.</p>
+      <a href="Call-to-Action-buttons.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Responsive Design Techniques</h2>
+      <p class="date">Published on: 2024-08-05</p>
+      <p>How to ensure your site looks great across all devices.</p>
+      <a href="website-for-any-devices.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Accessible Web Development</h2>
+      <p class="date">Published on: 2024-11-23</p>
+      <p>Improve usability with accessibility best practices in front-end.</p>
+      <a href="Building-Websites-Everyone-Can-Use.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Affiliate Landing Page Tips</h2>
+      <p class="date">Published on: 2024-11-19</p>
+      <p>Techniques for building high-converting affiliate pages.</p>
+      <a href="High-Converting-Affiliate.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Media Optimization</h2>
+      <p class="date">Published on: 2024-11-10</p>
+      <p>Modern methods to optimize media for the web.</p>
+      <a href="Guide-to-Image-and-Media-Optimization.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Using JavaScript for Engagement</h2>
+      <p class="date">Published on: 2024-05-10</p>
+      <p>Track and improve user experience with custom JavaScript techniques.</p>
+      <a href="JavaScript-to-Track-and-Improve-user.html">Read more...</a>
+    </div>
+    <div class="article">
+      <h2>Creating Affiliate Widgets</h2>
+      <p class="date">Published on: 2024-03-10</p>
+      <p>Custom affiliate widgets using HTML, CSS, and JavaScript.</p>
+      <a href="Widgets-for-Affiliate-Promotions.html">Read more...</a>
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2025 Sigqibo Zweni. All rights reserved.</p>
+    <p>
+      <a href="https://facebook.com" target="_blank">Facebook</a> |
+      <a href="https://youtube.com" target="_blank">YouTube</a> |
+      <a href="https://twitter.com" target="_blank">Twitter</a> |
+      <a href="contact.html">Contact</a>
+    </p>
+  </footer>
 </body>
+
 </html>
