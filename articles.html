@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,269 +8,1226 @@
   <meta name="keywords" content="WhatsApp hijack, South Africa, SIM swap, social media hacks, recover account, MTN fraud, front-end development, JavaScript, CSS frameworks, affiliate UI, SEO optimization">
   <meta name="robots" content="index, follow">
   <title>Articles | Sigqibo Zweni</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
       font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
+      background-color: #f8fafc;
+      color: #1e293b;
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    a {
-      color: #007bff;
-      text-decoration: none;
+    
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #0f172a;
+      color: #e2e8f0;
     }
-    a:hover {
-      text-decoration: underline;
+    
+    body.dark-mode header {
+      background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
     }
+    
+    body.dark-mode .sidebar,
+    body.dark-mode .content,
+    body.dark-mode .article-card {
+      background-color: #1e293b;
+      border-color: #334155;
+    }
+    
+    body.dark-mode .search-input {
+      background-color: #334155;
+      border-color: #475569;
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .search-input:focus {
+      border-color: #00abf0;
+    }
+    
+    body.dark-mode .category-btn {
+      background-color: #334155;
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .category-btn:hover,
+    body.dark-mode .category-btn.active {
+      background-color: #00abf0;
+      color: white;
+    }
+    
+    body.dark-mode .note {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border-left-color: #0ea5e9;
+    }
+    
+    body.dark-mode .share-buttons {
+      background-color: #334155;
+    }
+    
+    body.dark-mode .article-title {
+      color: #f1f5f9;
+    }
+    
+    body.dark-mode .article-description {
+      color: #cbd5e1;
+    }
+    
+    body.dark-mode .article-meta {
+      color: #94a3b8;
+    }
+    
+    body.dark-mode .tag {
+      background-color: #334155;
+      color: #cbd5e1;
+    }
+    
+    body.dark-mode .floating-help {
+      box-shadow: 0 8px 25px -5px rgba(220, 38, 38, 0.6);
+    }
+    
+    body.dark-mode footer {
+      background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
+    }
+    
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+    
+    .mobile-theme-toggle {
+      background: #334155;
+      border: none;
+      padding: 0.75rem;
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid #475569;
+    }
+    
+    /* Header Styles */
     header {
-      background-color: #081b29;
+      background: linear-gradient(135deg, #081b29 0%, #1e40af 100%);
       padding: 1rem;
       color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #00abf0;
+    }
+    
+    .desktop-menu {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .desktop-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .desktop-menu a:hover {
+      color: #00abf0;
+    }
+    
+    .desktop-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #00abf0;
+      transition: width 0.3s ease;
+    }
+    
+    .desktop-menu a:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #081b29;
+      border-top: 1px solid #334155;
+      padding: 1rem;
+    }
+    
+    .mobile-menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem;
+      border-bottom: 1px solid #334155;
+      transition: background-color 0.3s ease;
+    }
+    
+    .mobile-menu a:hover {
+      background-color: #1e40af;
+    }
+    
+    /* Main Layout */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+    
+    /* Sidebar Styles */
+    .sidebar {
+      display: none;
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    
+    .sidebar-section {
+      margin-bottom: 2rem;
+    }
+    
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .sidebar-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .search-container {
+      position: relative;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: border-color 0.3s ease;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: #00abf0;
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+    }
+    
+    .category-filters {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .category-btn {
+      background: #f1f5f9;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .category-btn:hover, .category-btn.active {
+      background: #00abf0;
+      color: white;
+    }
+    
+    .author-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid #22c55e;
+      text-align: center;
+    }
+    
+    .author-avatar {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+    
+    .avatar-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #22c55e;
+      margin: 0 auto 0.5rem;
+      display: block;
+      object-fit: cover;
+    }
+    
+    .author-status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      color: #16a34a;
+      font-weight: 500;
+    }
+    
+    .author-status i {
+      color: #22c55e;
+      font-size: 0.5rem;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .author-info h4 {
+      color: #166534;
+      margin-bottom: 0.25rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    
+    .author-title {
+      color: #15803d;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .author-description {
+      font-size: 0.8rem;
+      color: #166534;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    
+    .author-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+      padding: 0.75rem 0;
+      border-top: 1px solid #bbf7d0;
+      border-bottom: 1px solid #bbf7d0;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-number {
+      display: block;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #15803d;
+    }
+    
+    .stat-label {
+      font-size: 0.7rem;
+      color: #166534;
+      font-weight: 500;
+    }
+    
+    .author-social {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .author-social a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+    }
+    
+    .author-social a:hover {
+      background: #16a34a;
+      transform: translateY(-2px);
+    }
+    
+    .author-credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .credential {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: #15803d;
+      font-weight: 500;
+      background: rgba(34, 197, 94, 0.1);
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+    }
+    
+    .credential i {
+      color: #22c55e;
+    }
+    
+    /* Dark mode author card */
+    body.dark-mode .author-card {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border-left-color: #00abf0;
+    }
+    
+    body.dark-mode .author-info h4,
+    body.dark-mode .author-title,
+    body.dark-mode .author-description,
+    body.dark-mode .stat-number,
+    body.dark-mode .stat-label,
+    body.dark-mode .credential {
+      color: #e2e8f0;
+    }
+    
+    body.dark-mode .author-status {
+      color: #00abf0;
+    }
+    
+    body.dark-mode .author-status i {
+      color: #00abf0;
+    }
+    
+    body.dark-mode .author-stats {
+      border-color: #475569;
+    }
+    
+    body.dark-mode .author-social a {
+      background: #00abf0;
+    }
+    
+    body.dark-mode .author-social a:hover {
+      background: #0284c7;
+    }
+    
+    body.dark-mode .credential {
+      background: rgba(0, 171, 240, 0.1);
+    }
+    
+    body.dark-mode .credential i {
+      color: #00abf0;
+    }
+    
+    .recent-articles {
+      list-style: none;
+    }
+    
+    .recent-articles li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .recent-articles li:last-child {
+      border-bottom: none;
+    }
+    
+    .recent-articles a {
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+    
+    .recent-articles a:hover {
+      color: #00abf0;
+    }
+    
+    /* Content Area */
+    .content {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .page-header {
+      margin-bottom: 2rem;
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+    
+    .page-subtitle {
+      color: #64748b;
+      font-size: 1.1rem;
+    }
+    
+    .mobile-search {
+      display: block;
+      margin-bottom: 2rem;
+    }
+    
+    .mobile-categories {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .note {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      padding: 1rem;
+      border-left: 4px solid #0ea5e9;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .share-buttons {
+      background: #f8fafc;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .share-buttons a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .share-buttons a:hover {
+      background: #1e3a8a;
+    }
+    
+    .articles-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    .article-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #00abf0;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .article-card:hover {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .article-card:hover::before {
+      transform: scaleY(1);
+    }
+    
+    .article-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    
+    .article-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+    
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 1rem;
+    }
+    
+    .article-meta i {
+      color: #00abf0;
+    }
+    
+    .article-description {
+      color: #475569;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .article-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-    }
-    .menu {
-      display: flex;
       gap: 1rem;
     }
-    .menu a {
-      color: #00abf0;
-      font-weight: 600;
-    }
-    .content {
-      padding: 20px;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-    .article {
-      border-bottom: 1px solid #00abf0;
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-    }
-    .article h2 {
-      font-size: 1.5em;
-      color: #333;
-    }
-    .article .date {
-      font-size: 0.9em;
-      color: #777;
-    }
-    .note {
-      background: #e0f2fe;
-      padding: 0.8rem;
-      border-left: 4px solid #0ea5e9;
-      margin: 1rem 0;
+    
+    .read-more {
+      background: #00abf0;
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
       border-radius: 6px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
     }
+    
+    .read-more:hover {
+      background: #0284c7;
+    }
+    
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .tag {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    
+    .category-cybersecurity .tag {
+      background: #fef2f2;
+      color: #dc2626;
+    }
+    
+    .category-frontend .tag {
+      background: #f0f9ff;
+      color: #0369a1;
+    }
+    
     .cta {
-      background: #1e40af;
-      color: #fff;
-      padding: 1rem;
-      border-radius: 8px;
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
       text-align: center;
       margin: 2rem 0;
     }
+    
+    .cta h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
     .cta a {
-      color: #fff;
+      color: white;
       text-decoration: underline;
       font-weight: 600;
     }
-    .share-buttons {
-      background: #f3f4f6;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 6px;
-    }
+    
     .floating-help {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #e11d48;
+      bottom: 2rem;
+      right: 2rem;
+      background: #dc2626;
       color: white;
-      padding: 12px 18px;
-      border-radius: 25px;
-      font-weight: bold;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 25px -5px rgba(220, 38, 38, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
     }
+    
+    .floating-help:hover {
+      background: #b91c1c;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -5px rgba(220, 38, 38, 0.5);
+    }
+    
     footer {
-      background: #081b29;
+      background: linear-gradient(135deg, #081b29 0%, #1e40af 100%);
       color: white;
-      padding: 1rem;
+      padding: 2rem 1rem;
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
+    
     footer a {
       color: #00abf0;
-      margin: 0 10px;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
     }
+    
     footer a:hover {
-      text-decoration: underline;
+      color: white;
     }
-    .search-box {
-      margin: 1rem 0;
-    }
-    .search-box input {
-      width: 100%;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .author-bio {
-      background: #f0fdf4;
-      border-left: 4px solid #22c55e;
-      padding: 1rem;
-      margin: 1.5rem 0;
-      border-radius: 6px;
-    }
-    .tags {
-      margin-top: 0.5rem;
-    }
-    .tags span {
-      background: #e2e8f0;
-      padding: 5px 10px;
-      margin-right: 5px;
-      font-size: 0.85rem;
-      border-radius: 4px;
-      color: #374151;
-    }
-    @media (max-width: 768px) {
-      .menu {
-        flex-direction: column;
+    
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      .mobile-search {
+        display: none;
+      }
+      
+      .mobile-categories {
+        display: none;
+      }
+      
+      .articles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       }
     }
+    
+    @media (min-width: 1024px) {
+      .main-container {
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+      }
+      
+      .sidebar {
+        display: block;
+      }
+      
+      .desktop-menu {
+        display: flex;
+      }
+      
+      .mobile-menu-toggle {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 1023px) {
+      .desktop-menu {
+        display: none;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+      }
+      
+      .mobile-menu.active {
+        display: block;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .main-container {
+        padding: 1rem;
+      }
+      
+      .content {
+        padding: 1.5rem;
+      }
+      
+      .page-title {
+        font-size: 2rem;
+      }
+      
+      .floating-help {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+    
+    .hidden {
+      display: none;
+    }
   </style>
+  <script>
+    // Theme Toggle Functionality
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById('themeIcon');
+      const mobileThemeIcon = document.querySelector('.mobile-theme-toggle i');
+      
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.className = 'fas fa-sun';
+        if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-sun';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeIcon.className = 'fas fa-moon';
+        if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-moon';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    
+    // Load saved theme
+    function loadTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const themeIcon = document.getElementById('themeIcon');
+      const mobileThemeIcon = document.querySelector('.mobile-theme-toggle i');
+      
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeIcon.className = 'fas fa-sun';
+        if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-sun';
+      }
+    }
+    
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('active');
+    }
+    
+    // Search functionality
+    function searchArticles(query) {
+      const articles = document.querySelectorAll('.article-card');
+      const searchTerm = query.toLowerCase();
+      
+      articles.forEach(article => {
+        const title = article.dataset.title.toLowerCase();
+        const description = article.querySelector('.article-description').textContent.toLowerCase();
+        const tags = Array.from(article.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm)) {
+          article.style.display = 'block';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+    }
+    
+    // Category filtering
+    function filterByCategory(category) {
+      const articles = document.querySelectorAll('.article-card');
+      const categoryButtons = document.querySelectorAll('.category-btn');
+      
+      // Update active button
+      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      articles.forEach(article => {
+        if (category === 'all' || article.dataset.category === category) {
+          article.style.display = 'block';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+    }
+    
+    // Initialize theme on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      loadTheme();
+    });
+  </script>
 </head>
 <body>
   <header>
-    <div><strong>Sigqibo Zweni</strong> | Articles</div>
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="projects.html">Projects</a>
-      <a href="Academy/academy.html">Academy</a>
+    <div class="header-content">
+      <div class="logo">Sigqibo Zweni</div>
+      <nav class="desktop-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="projects.html">Projects</a>
+        <a href="Academy/academy.html">Academy</a>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+      </nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="projects.html">Projects</a>
+        <a href="Academy/academy.html">Academy</a>
+        <button class="theme-toggle mobile-theme-toggle" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
     </div>
   </header>
-  <div class="content">
-    <div class="search-box">
-      <input type="text" placeholder="Search articles..." />
-    </div><div class="note">
-  <strong>TL;DR:</strong> WhatsApp scams and number hijacking are rising in South Africa. Learn how to spot fake OTPs, protect your SIM, and recover stolen accounts.
-</div>
 
-<div class="share-buttons">
-  <p><strong>📣 Help protect your friends — share this article:</strong></p>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://sigqibozweni.co.za/articles.html">Facebook</a> |
-  <a href="https://twitter.com/intent/tweet?url=https://sigqibozweni.co.za/articles.html">Twitter</a> |
-  <a href="https://api.whatsapp.com/send?text=https://sigqibozweni.co.za/articles.html">WhatsApp</a>
-</div>
+  <div class="main-container">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">
+          <i class="fas fa-search"></i>
+          Search Articles
+        </h3>
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search articles..." onkeyup="searchArticles(this.value)">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">
+          <i class="fas fa-filter"></i>
+          Categories
+        </h3>
+        <div class="category-filters">
+          <button class="category-btn active" onclick="filterByCategory('all')">All Articles</button>
+          <button class="category-btn" onclick="filterByCategory('cybersecurity')">Cybersecurity</button>
+          <button class="category-btn" onclick="filterByCategory('frontend')">Frontend Development</button>
+        </div>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">
+          <i class="fas fa-user"></i>
+          About Author
+        </h3>
+        <div class="author-card">
+          <div class="author-avatar">
+            <img src="https://via.placeholder.com/80x80/00abf0/ffffff?text=SZ" alt="Sigqibo Zweni" class="avatar-img">
+            <div class="author-status">
+              <i class="fas fa-circle"></i>
+              <span>Available for consulting</span>
+            </div>
+          </div>
+          <div class="author-info">
+            <h4>Sigqibo Zweni</h4>
+            <p class="author-title">Cybersecurity Expert & Full-Stack Developer</p>
+            <p class="author-description">Helping South Africans protect their digital lives through education and secure web solutions. 5+ years experience in cybersecurity and web development.</p>
+            <div class="author-stats">
+              <div class="stat">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Articles Written</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">People Helped</span>
+              </div>
+            </div>
+            <div class="author-social">
+              <a href="https://linkedin.com/in/sigqibozweni" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/C1401390" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://twitter.com/sigqibozweni" target="_blank" title="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="mailto:contact@sigqibozweni.co.za" title="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+            <div class="author-credentials">
+              <span class="credential">
+                <i class="fas fa-certificate"></i>
+                Certified Ethical Hacker
+              </span>
+              <span class="credential">
+                <i class="fas fa-graduation-cap"></i>
+                Computer Science Graduate
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">
+          <i class="fas fa-clock"></i>
+          Recent Articles
+        </h3>
+        <ul class="recent-articles">
+          <li><a href="Social_Media_Security_FINAL_Full_Article.html">How Hackers Steal Your Social Media</a></li>
+          <li><a href="Building-Websites-Everyone-Can-Use.html">Accessibility in Front-End</a></li>
+          <li><a href="html-article.html">Front-End Development Tutorials</a></li>
+          <li><a href="Bootstrap-vs-tailwind.html">Bootstrap vs. Tailwind CSS</a></li>
+        </ul>
+      </div>
+    </aside>
 
-<h1>Cybersecurity & Social Media Protection Articles</h1>
-<div class="article">
-  <h2>How Hackers Steal Your Social Media — And How to Stop Them</h2>
-  <p class="date">2025-06-19</p>
-  <p>This emotionally driven viral article walks you through real stories, social media impersonation, WhatsApp number hijacking in South Africa, and the step-by-step tactics to protect yourself online.</p>
-  <a href="Social_Media_Security_FINAL_Full_Article.html">Read full article</a>
-  <div class="author-bio">
-    <strong>Written by Sigqibo Zweni</strong> — cybersecurity enthusiast, web developer & digital educator helping South Africans protect their digital lives.
-  </div>
-  <div class="tags">
-    <span>#cybersecurity</span><span>#socialmedia</span><span>#SIMswap</span>
-  </div>
-</div>
+    <main class="content">
+      <div class="page-header">
+        <h1 class="page-title">Articles</h1>
+        <p class="page-subtitle">Insights on cybersecurity, web development, and digital safety</p>
+      </div>
 
-<div class="cta">
-  💌 Get monthly cybersecurity tips & alerts. <br>
-  <a href="subscribe.html">Subscribe to our newsletter</a>
-</div>
+      <div class="mobile-search">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search articles..." onkeyup="searchArticles(this.value)">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </div>
 
-<h1>Front-End Web Development Articles</h1>
-<div class="article">
-  <h2>Front-End Development Tutorials</h2>
-  <p class="date">2024-11-15</p>
-  <p>Learn HTML, CSS, and JavaScript from scratch and build responsive websites.</p>
-  <a href="html-article.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>Mastering Front-End Development</h2>
-  <p class="date">2024-11-15</p>
-  <p>Build advanced user interfaces with modern CSS and front-end frameworks.</p>
-  <a href="2nd-html-article.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>Bootstrap vs. Tailwind CSS</h2>
-  <p class="date">2024-11-15</p>
-  <p>Compare the top two CSS frameworks and pick the right one for your project.</p>
-  <a href="Bootstrap-vs-tailwind.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>Affiliate Articles</h2>
-  <p class="date">2024-10-15</p>
-  <p>Design affiliate-friendly layouts and UI for marketing-focused websites.</p>
-  <a href="Affiliate-articles.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>HTML/CSS/JS SEO Optimization</h2>
-  <p class="date">2024-11-05</p>
-  <p>Improve search engine visibility with semantic HTML and optimized code.</p>
-  <a href="SEO-article.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>Call-to-Action Button Design</h2>
-  <p class="date">2024-09-05</p>
-  <p>Create high-converting CTAs with smart UI design patterns and colors.</p>
-  <a href="Call-to-Action-buttons.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>Responsive Design Essentials</h2>
-  <p class="date">2024-08-05</p>
-  <p>Build mobile-first layouts that work across phones, tablets, and desktops.</p>
-  <a href="website-for-any-devices.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>JavaScript for Engagement</h2>
-  <p class="date">2024-05-10</p>
-  <p>Track user behavior and boost interaction using simple JavaScript tools.</p>
-  <a href="JavaScript-to-Track-and-Improve-user.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>Accessibility in Front-End</h2>
-  <p class="date">2024-11-23</p>
-  <p>Ensure your websites are usable by everyone, including users with disabilities.</p>
-  <a href="Building-Websites-Everyone-Can-Use.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>Media Optimization Guide</h2>
-  <p class="date">2024-11-10</p>
-  <p>Speed up your website by optimizing images, videos, and assets for the web.</p>
-  <a href="Guide-to-Image-and-Media-Optimization.html">Read more...</a>
-</div>
-<div class="article">
-  <h2>Affiliate UI Tips</h2>
-  <p class="date">2023-08-05</p>
-  <p>Enhance affiliate performance through smart interface design principles.</p>
-  <a href="Tips-for-a-User-Friendly-Affiliate-Website.html">Read more...</a>
-</div>
+      <div class="mobile-categories">
+        <button class="category-btn active" onclick="filterByCategory('all')">All</button>
+        <button class="category-btn" onclick="filterByCategory('cybersecurity')">Cybersecurity</button>
+        <button class="category-btn" onclick="filterByCategory('frontend')">Frontend</button>
+      </div>
 
-  </div>
-  <a href="https://www.facebook.com/hacked" target="_blank" class="floating-help">🚨 I’ve Been Hacked</a>
-  <footer>
-    <p>&copy; 2025 Sigqibo Zweni. All rights reserved.</p>
-    <p>
-      <a href="https://facebook.com" target="_blank">Facebook</a> |
-      <a href="https://youtube.com" target="_blank">YouTube</a> |
-      <a href="https://twitter.com" target="_blank">Twitter</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="privacy.html">Privacy</a>
-    </p>
-  </footer>
-</body>
-    </html>
+      <div class="note">
+        <strong>TL;DR:</strong> WhatsApp scams and number hijacking are rising in South Africa. Learn how to spot fake OTPs, protect your SIM, and recover stolen accounts.
+      </div>
+
+      <div class="share-buttons">
+        <p><strong>📣 Help protect your friends — share this page:</strong></p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://sigqibozweni.co.za/articles.html" target="_blank">
+          <i class="fab fa-facebook"></i> Facebook
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=https://sigqibozweni.co.za/articles.html" target="_blank">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a href="https://api.whatsapp.com/send?text=https://sigqibozweni.co.za/articles.html" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+
+      <div class="articles-grid" id="articlesGrid">
+        <article class="article-card category-cybersecurity" data-title="How Hackers Steal Your Social Media — And How to Stop Them" data-category="cybersecurity">
+          <div class="article-header">
+            <div>
+              <h2 class="article-title">How Hackers Steal Your Social Media — And How to Stop Them</h2>
+              <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> June 19, 2025</span>
+                <span><i class="fas fa-clock"></i> 8 min read</span>
+                <span><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+              </div>
+            </div>
+          </div>
+          <p class="article-description">This emotionally driven viral article walks you through real stories, social media impersonation, WhatsApp number hijacking in South Africa, and the step-by-step tactics to protect yourself online.</p>
+          <div class="article-footer">
+            <a href="Social_Media_Security_FINAL_Full_Article.html" class="read-more">Read Article</a>
+            <div class="article-tags">
+              <span class="tag">#cybersecurity</span>
+              <span class="tag">#socialmedia</span>
+              <span class="tag">#SIMswap</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card category-frontend" data-title="Front-End Development Tutorials" data-category="frontend">
+          <div class="article-header">
+            <div>
+              <h2 class="article-title">Front-End Development Tutorials</h2>
+              <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> November 15, 2024</span>
+                <span><i class="fas fa-clock"></i> 12 min read</span>
+                <span><i class="fas fa-code"></i> Frontend</span>
+              </div>
+            </div>
+          </div>
+          <p class="article-description">Learn HTML, CSS, and JavaScript from scratch and build responsive websites with modern development practices.</p>
+          <div class="article-footer">
+            <a href="html-article.html" class="read-more">Read Article</a>
+            <div class="article-tags">
+              <span class="tag">#html</span>
+              <span class="tag">#css</span>
+              <span class="tag">#javascript</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card category-frontend" data-title="Mastering Front-End Development" data-category="frontend">
+          <div class="article-header">
+            <div>
+              <h2 class="article-title">Mastering Front-End Development</h2>
+              <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> November 15, 2024</span>
+                <span><i class="fas fa-clock"></i> 10 min read</span>
+                <span><i class="fas fa-code"></i> Frontend</span>
+              </div>
+            </div>
+          </div>
+          <p class="article-description">Build advanced user interfaces with modern CSS and front-end frameworks for professional web development.</p>
+          <div class="article-footer">
+            <a href="2nd-html-article.html" class="read-more">Read Article</a>
+            <div class="article-tags">
+              <span class="tag">#advanced</span>
+              <span class="tag">#frameworks</span>
+              <span class="tag">#ui</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card category-frontend" data-title="Bootstrap vs. Tailwind CSS" data-category="frontend">
+          <div class="article-header">
+            <div>
+              <h2 class="article-title">Bootstrap vs. Tailwind CSS</h2>
+              <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> November 15, 2024</span>
+                <span><i class="fas fa-clock"></i> 7 min read</span>
+                <span><i class="fas fa-code"></i> Frontend</span>
+              </div>
+            </div>
+          </div>
+          <p class="article-description">Compare the top two CSS frameworks and pick the right one for your project needs and development workflow.</p>
+          <div class="article-footer">
+            <a href="Bootstrap-vs-tailwind.html" class="read-more">Read Article</a>
+            <div class="article-tags">
+              <span class="tag">#bootstrap</span>
+              <span class="tag">#tailwind</span>
+              <span class="tag">#css</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card category-frontend" data-title="Affiliate Articles" data-category="frontend">
+          <div class="article-header">
+            <div>
+              <h2 class="article-title">Affiliate Articles</h2>
+              <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> October 15, 2024</span>
+                <span><i class="fas fa-clock"></i> 6 min read</span>
+                <span><i class="fas fa-code"></i> Frontend</span>
+              </div>
+            </div>
+          </div>
+          <p class="article-description">Design affiliate-friendly layouts and UI for marketing-focused websites that convert visitors into customers.</p>
+          <div class="article-footer">
+            <a href="Affiliate-articles.html" class="read-more">Read Article</a>
+            <div class="article-tags">
+              <span class="tag">#affiliate</span>
+              <span class="tag">#marketing</span>
+              <span class="tag">#ui</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card category-frontend" data-title="HTML/CSS/JS SEO Optimization" data-category="frontend">
+          <div class="article-header">
+            <div>
+              <h2 class="article-title">HTML/CSS/JS SEO Optimization</h2>
+              <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> November 5, 2024</span>
+                <span><i class="fas fa-clock"></i> 9 min read</span>
+                <span><i class="fas fa-code"></i> Frontend</span>
+              </div>
+            </div>
+          </div>
+          <p class="article-description">Improve search engine visibility with semantic HTML and optimized code structure for better rankings.</p>
+          <div class="article-footer">
+            <a href="SEO-article.html" class="read-more">Read Article</a>
+            <div class="article-tags">
+              <span class="tag">#seo</span>
+              <span class="tag">#optimization</span>
+              <span class="tag">#semantic</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card category-frontend" data-title="Call-to-Action Button Design" data-category="frontend">
+          <div class="article-header">
+            <div>
+              <h2 class="article-title">Call-to-Action Button Design</h2>
+              <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> September 5, 2024</span>
+                <span><i class="fas fa-clock"></i> 5 min read</span>
+                <span><i class="fas fa-code"></i> Frontend</span>
+              </div>
+            </div>
+          </div>
+          <p class="article-description">Create high-converting CTAs with smart UI design patterns and colors that drive user engagement and conversions.</p>
+          <div class="article-footer">
+            <a href="Call-to-Action-buttons.html" class="read-more">Read Article</a>
+            <div class="article-tags">
+              <span class="tag">#cta</span>
+              <span class="tag">#conversion</span>
+              <span class="tag">#design</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card category-frontend" data-title="Responsive Design Essentials" data-category="frontend">
+          <div class="article-header">
+            <div>
+              <h2 class="article-title">Responsive Design Essentials</h2>
+              <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> August 5, 2024</span>
+                <span><i class="fas fa-clock"></i> 11 min read</span>
+                <span><i class="fas fa-code"></i> Frontend</span>
