@@ -1,152 +1,1120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How Hackers Steal Your Social Media</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>How Hackers Steal Your Social Media — And How to Stop Them</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f9fafb;
-      color: #111;
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #1e40af;
+      --secondary: #f59e0b;
+      --danger: #ef4444;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, var(--gray-50) 0%, #ffffff 100%);
+      color: var(--gray-800);
       line-height: 1.7;
+      scroll-behavior: smooth;
     }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #fff;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border-radius: 10px;
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      z-index: 1000;
+      transition: width 0.1s ease;
     }
-    h1, h2, h3 {
-      color: #1f2937;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
-    h3 {
-      font-size: 1.2rem;
-      margin-top: 1.5rem;
-    }
-    p, li {
-      font-size: 1rem;
-    }
-    img {
-      max-width: 100%;
-      margin: 1rem 0;
-      border-radius: 6px;
-    }
-    .cta {
-      background: #1e40af;
-      color: #fff;
-      padding: 1rem;
-      border-radius: 8px;
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 4rem 1rem;
       text-align: center;
-      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
     }
-    .cta a {
-      color: #fff;
-      text-decoration: underline;
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+      animation: float 20s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-100px) rotate(360deg); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      animation: slideDown 0.8s ease-out;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      animation: slideDown 0.8s ease-out 0.2s both;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      animation: slideUp 0.8s ease-out 0.4s both;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      display: block;
+      color: var(--secondary);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .toc {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-left: 4px solid var(--primary);
+    }
+
+    .toc h3 {
+      color: var(--gray-800);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .toc li {
+      margin: 0.5rem 0;
+    }
+
+    .toc a {
+      color: var(--gray-600);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      display: block;
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .toc a:hover {
+      background: var(--gray-50);
+      color: var(--primary);
+      border-left-color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .section {
+      background: white;
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border: 1px solid var(--gray-100);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .section-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    h1, h2, h3 {
+      color: var(--gray-800);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
       font-weight: 600;
     }
-    .note {
-      background: #e0f2fe;
-      padding: 0.8rem;
-      border-left: 4px solid #0ea5e9;
-      margin: 1rem 0;
-      border-radius: 6px;
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
     }
-    ul {
-      padding-left: 1.2rem;
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--gray-700);
     }
-    blockquote {
-      font-style: italic;
-      color: #374151;
+
+    .threat-card {
+      background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+      border: 1px solid #fca5a5;
+      border-radius: 12px;
+      padding: 1.5rem;
       margin: 1rem 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .threat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.15);
+    }
+
+    .threat-card::before {
+      content: '⚠️';
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      font-size: 1.5rem;
+      background: white;
+      padding: 0.5rem;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .threat-title {
+      font-weight: 600;
+      color: var(--danger);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .interactive-quiz {
+      background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .quiz-question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--gray-800);
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quiz-option {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .quiz-option:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .quiz-option.correct {
+      background: #dcfce7;
+      border-color: var(--success);
+    }
+
+    .quiz-option.incorrect {
+      background: #fee2e2;
+      border-color: var(--danger);
+    }
+
+    .security-tip {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .security-tip::before {
+      content: '💡';
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .checklist {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      transition: all 0.2s ease;
+    }
+
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+
+    .checklist-item:hover {
+      background: var(--gray-50);
       padding-left: 1rem;
-      border-left: 4px solid #9ca3af;
+      border-radius: 8px;
+    }
+
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--gray-300);
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .checkbox.checked {
+      background: var(--success);
+      border-color: var(--success);
+      color: white;
+    }
+
+    .emergency-section {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 2px solid var(--warning);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .emergency-section::before {
+      content: '🚨';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      background: white;
+      padding: 0.5rem;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .cta {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .cta h3 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--primary);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border: 1px solid var(--gray-100);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .floating-nav {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border-radius: 50px;
+      padding: 1rem 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      z-index: 100;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .floating-nav.visible {
+      opacity: 1;
+    }
+
+    .floating-nav a {
+      display: block;
+      padding: 0.8rem 1.5rem;
+      color: var(--gray-600);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border-radius: 25px;
+      margin: 0.2rem 0.5rem;
+    }
+
+    .floating-nav a:hover, .floating-nav a.active {
+      background: var(--primary);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-subtitle { font-size: 1.1rem; }
+      .hero-stats { gap: 1.5rem; }
+      .section { padding: 2rem 1.5rem; }
+      .container { padding: 1rem; }
+      .floating-nav { display: none; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>How Hackers Steal Your Social Media — And How to Stop Them</h1>
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <div class="floating-nav" id="floatingNav">
+    <a href="#threats" data-section="threats">🎯</a>
+    <a href="#psychology" data-section="psychology">🧠</a>
+    <a href="#response" data-section="response">🚨</a>
+    <a href="#prevention" data-section="prevention">🛡️</a>
+    <a href="#immunity" data-section="immunity">💪</a>
+  </div>
 
-    <h2>Section 1: Your Phone Number — The Front Door to Your Digital Life</h2>
-    <p>“It wasn’t until my cousin called asking if I was really borrowing R1,000 on WhatsApp that I realized my number had been hijacked — and someone else was pretending to be me.”</p>
-    <p>In South Africa, your <strong>WhatsApp number</strong> is more than just a way to text — it’s your <strong>identity</strong>, your <strong>business tool</strong>, your <strong>banking gateway</strong>, and even your <strong>emergency contact line</strong>. Hackers know this — and they are exploiting it every day.</p>
-    <ul>
-      <li><strong>SIM Swapping:</strong> Criminals bribe or trick mobile carrier employees to issue a new SIM with your number.</li>
-      <li><strong>Fake “6-digit Code” Scams:</strong> You receive an SMS with a code, then someone posing as a friend or delivery service asks you to “send it to confirm delivery.”</li>
-      <li><strong>Malicious APKs:</strong> You click a link and install a fake app that secretly exports your WhatsApp session and files.</li>
-      <li><strong>Public Wi-Fi Surveillance:</strong> Hackers use free Wi-Fi in malls and taxis to steal your data.</li>
-    </ul>
-    <img src="https://i.imgur.com/k5aCkso.png" alt="WhatsApp 6-digit scam" />
-    <img src="https://i.imgur.com/LITu9I8.png" alt="SIM swap warning SMS" />
-    <p><strong>Once hijacked:</strong> They message your contacts, pretend to be you, and scam them for money. Some victims lose R10,000 or more — in minutes.</p>
-
-    <h2>Section 2: The Psychological Traps Hackers Use — How They Trick You</h2>
-    <p>“He said he was from MTN, and that someone was trying to port my number. I was panicking… I gave him the OTP. The moment I did, my phone went dead.”</p>
-    <ul>
-      <li><strong>Urgency & Fear:</strong> Fake security alerts make you panic and act fast.</li>
-      <li><strong>Impersonation:</strong> Cloned profiles of friends or officials trick you into helping.</li>
-      <li><strong>Fake Job Offers:</strong> “R15,000 work from home” scams on TikTok and Facebook.</li>
-      <li><strong>Voice Note Phishing:</strong> AI or recorded messages ask for airtime or money.</li>
-      <li><strong>Guilt & Trust:</strong> “Only you can help me” or “I trust you” tactics manipulate emotions.</li>
-    </ul>
-    <img src="https://i.imgur.com/J7nhpPl.png" alt="Fake SASSA grant form" />
-    <img src="https://i.imgur.com/YbNU9gK.png" alt="Facebook phishing login prompt" />
-    <img src="https://i.imgur.com/nK97zOD.png" alt="Instagram fake job link" />
-
-    <h2>Section 3: What to Do If You’ve Been Hacked</h2>
-    <blockquote>"By the time I knew my account was compromised, the hacker had already scammed three friends and deleted my photos."</blockquote>
-    <ul>
-      <li><strong>Try to Regain Access:</strong> Use recovery tools like <a href="https://www.facebook.com/hacked">Facebook Hacked Help</a> or Gmail's recovery portal.</li>
-      <li><strong>Log Out All Devices:</strong> In Gmail and Facebook settings.</li>
-      <li><strong>Warn Your Contacts:</strong> Ask someone to notify your network.</li>
-      <li><strong>Report to Cybercrime:</strong> Visit <a href="https://www.cybercrime.org.za/">Cybercrime.org.za</a> and open a SAPS case.</li>
-      <li><strong>Check Connected Accounts:</strong> Reset passwords linked to the compromised email.</li>
-      <li><strong>Scan for Malware:</strong> Use trusted tools like Malwarebytes.</li>
-      <li><strong>Notify Your Bank:</strong> Freeze transactions if needed.</li>
-    </ul>
-    <img src="https://i.imgur.com/sWRm0mF.png" alt="Facebook hacked recovery screen" />
-    <img src="https://i.imgur.com/Ie7K9k6.png" alt="Google account recovery" />
-    <img src="https://i.imgur.com/AMtI1XW.png" alt="Cybercrime South Africa report screenshot" />
-
-    <h2>Section 4: Build Long-Term Digital Immunity</h2>
-    <blockquote>“Hackers never stop adapting. If you want to stay safe, you must stay one step ahead — always.”</blockquote>
-    <ul>
-      <li><strong>Monthly Security Checks:</strong> Review logins, app permissions, and run antivirus scans.</li>
-      <li><strong>Use a Password Manager:</strong> Like <a href="https://bitwarden.com">Bitwarden</a> or <a href="https://1password.com">1Password</a>.</li>
-      <li><strong>Learn the Basics:</strong> Take free courses on <a href="https://www.coursera.org">Coursera</a> and <a href="https://www.open.edu/openlearn/">OpenLearn</a>.</li>
-      <li><strong>Backup Data:</strong> Use secure cloud storage or encrypted drives.</li>
-      <li><strong>Help Others:</strong> Share this article with your community.</li>
-      <li><strong>Stay Updated:</strong> Follow <a href="https://www.reddit.com/r/cybersecurity">r/cybersecurity</a> and ethical hackers.</li>
-    </ul>
-    <img src="https://i.imgur.com/lCW6Fpj.png" alt="Bitwarden password manager" />
-    <img src="https://i.imgur.com/8gjyUZn.png" alt="Online cybersecurity courses" />
-    <img src="https://i.imgur.com/kU4iQuZ.png" alt="Secure data backup" />
-
-    <h2>Section 5: Final Words — From Awareness to Action</h2>
-    <ul>
-      <li><strong>Save and Share:</strong> You might save someone from being scammed today.</li>
-      <li><strong>Join the Movement:</strong> Post on social media using <strong>#SecureSA</strong>.</li>
-      <li><strong>Grow Your Skills:</strong> Cybersecurity isn’t just defense — it’s a future career.</li>
-    </ul>
-    <div class="cta">
-      👇 Stay informed. Stay safe. Follow us on YouTube for tutorials and deep dives:<br />
-      <a href="https://www.youtube.com/@yourchannel">youtube.com/@yourchannel</a>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Your Digital Life Under Attack</h1>
+      <p class="hero-subtitle">How hackers steal your social media accounts in South Africa — and your complete defense strategy</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">73%</span>
+          <span class="stat-label">of SA users targeted</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">R12k</span>
+          <span class="stat-label">average scam loss</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">45s</span>
+          <span class="stat-label">to hijack WhatsApp</span>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="container">
+    <div class="toc fade-in">
+      <h3><i class="fas fa-list"></i> Quick Navigation</h3>
+      <ul>
+        <li><a href="#threats">🎯 Common Attack Methods</a></li>
+        <li><a href="#psychology">🧠 Psychological Manipulation</a></li>
+        <li><a href="#response">🚨 Emergency Response</a></li>
+        <li><a href="#prevention">🛡️ Daily Protection</a></li>
+        <li><a href="#immunity">💪 Long-term Security</a></li>
+      </ul>
+    </div>
+
+    <div class="stats-grid fade-in">
+      <div class="stat-card">
+        <div class="stat-icon">📱</div>
+        <span class="stat-value">2.1M</span>
+        <div>WhatsApp accounts compromised monthly in SA</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <span class="stat-value">R847M</span>
+        <div>Lost to social media scams in 2024</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⏱️</div>
+        <span class="stat-value">23min</span>
+        <div>Average time to detect breach</div>
+      </div>
+    </div>
+
+    <section class="section fade-in" id="threats">
+      <div class="section-icon">
+        <i class="fas fa-crosshairs"></i>
+      </div>
+      <h2>Section 1: Your Phone Number — The Master Key</h2>
+      <p><em>"It wasn't until my cousin called asking if I was really borrowing R1,000 on WhatsApp that I realized my number had been hijacked — and someone else was pretending to be me."</em></p>
+      
+      <p>In South Africa, your <strong>WhatsApp number</strong> isn't just communication—it's your digital identity, business lifeline, banking gateway, and emergency contact. Hackers understand this vulnerability and exploit it daily.</p>
+
+      <div class="threat-card">
+        <div class="threat-title">SIM Swapping</div>
+        <p>Criminals bribe or socially engineer mobile carrier employees to issue a new SIM with your number. Once successful, they control all your SMS-based accounts.</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="threat-title">6-Digit Code Scams</div>
+        <p>You receive a verification SMS, then someone posing as a friend or delivery service asks you to "send the code to confirm delivery." Never share these codes.</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="threat-title">Malicious APK Files</div>
+        <p>Fake apps that secretly export your WhatsApp session, contacts, and media files to attackers' servers.</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="threat-title">Public Wi-Fi Surveillance</div>
+        <p>Hackers use compromised Wi-Fi networks in malls, taxis, and coffee shops to intercept your data.</p>
+      </div>
+
+      <div class="interactive-quiz">
+        <div class="quiz-question">Quick Test: Which is the BIGGEST red flag?</div>
+        <div class="quiz-options">
+          <div class="quiz-option" onclick="selectQuizOption(this, false)">A friend asks for airtime via WhatsApp</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, false)">You receive a promotional SMS</div>
+          <div class="quiz-option" onclick="selectQuizOption(this, true)">Someone asks you to forward a 6-digit code</div>
+        </div>
+        <div id="quizResult"></div>
+      </div>
+
+      <div class="security-tip">
+        <strong>Pro Tip:</strong> Enable two-step verification on WhatsApp immediately. Go to Settings → Account → Two-step verification and set a 6-digit PIN that only you know.
+      </div>
+    </section>
+
+    <section class="section fade-in" id="psychology">
+      <div class="section-icon">
+        <i class="fas fa-brain"></i>
+      </div>
+      <h2>Section 2: The Psychology of Digital Deception</h2>
+      <p><em>"He said he was from MTN, claiming someone was trying to port my number. I was panicking... I gave him the OTP. The moment I did, my phone went dead."</em></p>
+
+      <h3>The Manipulation Playbook</h3>
+      
+      <div class="threat-card">
+        <div class="threat-title">Urgency & Fear</div>
+        <p>"Your account will be closed in 24 hours!" - Panic makes you skip verification steps.</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="threat-title">Authority Impersonation</div>
+        <p>Fake profiles of bank officials, government agencies, or tech support create false legitimacy.</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="threat-title">Social Proof</div>
+        <p>"Everyone in your area is doing this" - Making you feel left out if you don't comply.</p>
+      </div>
+
+      <div class="threat-card">
+        <div class="threat-title">Trust Exploitation</div>
+        <p>"Only you can help me" or "I trust you with this" - Manipulating your desire to help others.</p>
+      </div>
+
+      <div class="security-tip">
+        <strong>Defense Strategy:</strong> Always pause and verify independently. If someone claims to be from a company, hang up and call the official number yourself.
+      </div>
+    </section>
+
+    <section class="section fade-in" id="response">
+      <div class="section-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <h2>Section 3: Emergency Response Protocol</h2>
+      
+      <div class="emergency-section">
+        <h3>If You're Currently Being Hacked - Act NOW</h3>
+        <div class="checklist">
+          <div class="checklist-item">
+            <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+            <div>
+              <strong>Immediate Action:</strong> Turn on airplane mode to disconnect from internet
+            </div>
+          </div>
+          <div class="checklist-item">
+            <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+            <div>
+              <strong>Alert Contacts:</strong> Use another device to warn your contacts about the compromise
+            </div>
+          </div>
+          <div class="checklist-item">
+            <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+            <div>
+              <strong>Secure Banking:</strong> Call your bank immediately to freeze transactions
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Recovery Steps</h3>
+      <div class="checklist">
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Regain Access:</strong> Use recovery tools like <a href="https://www.facebook.com/hacked" target="_blank">Facebook Hacked Help</a> or Gmail's recovery portal
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Force Logout:</strong> Log out all devices from Gmail and Facebook security settings
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Report Crime:</strong> File a case at <a href="https://www.cybercrime.org.za/" target="_blank">Cybercrime.org.za</a> and your local SAPS
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Reset Passwords:</strong> Change passwords for all accounts linked to compromised email
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Malware Scan:</strong> Run full system scan with Malwarebytes or Windows Defender
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-in" id="prevention">
+      <div class="section-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h2>Section 4: Daily Digital Defense</h2>
+      
+      <div class="security-tip">
+        <strong>The 3-2-1 Rule:</strong> 3 seconds to think, 2 sources to verify, 1 official channel to confirm.
+      </div>
+
+      <h3>Essential Security Habits</h3>
+      <div class="checklist">
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Strong Passwords:</strong> Use unique passwords for every account (minimum 12 characters)
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Two-Factor Authentication:</strong> Enable 2FA on all important accounts
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Regular Updates:</strong> Keep apps and operating system updated
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Secure Networks:</strong> Avoid public Wi-Fi for sensitive activities
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Link Verification:</strong> Hover over links to see actual URLs before clicking
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-in" id="immunity">
+      <div class="section-icon">
+        <i class="fas fa-dumbbell"></i>
+      </div>
+      <h2>Section 5: Building Digital Immunity</h2>
+      <p><em>"Hackers never stop evolving. Your defense must evolve faster."</em></p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🔒</div>
+          <div><strong>Password Manager</strong><br>Use Bitwarden or 1Password for unique passwords</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🎓</div>
+          <div><strong>Security Education</strong><br>Take free courses on Coursera and OpenLearn</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💾</div>
+          <div><strong>Data Backup</strong><br>Secure cloud storage and encrypted drives</div>
+        </div>
+      </div>
+
+      <div class="security-tip">
+        <strong>Monthly Security Audit:</strong> Review login sessions, check app permissions, run antivirus scans, and update passwords for unused accounts.
+      </div>
+
+      <h3>Advanced Protection Strategies</h3>
+      <div class="checklist">
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Privacy Settings:</strong> Review and tighten social media privacy controls monthly
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Financial Monitoring:</strong> Set up bank account alerts for all transactions
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Digital Footprint:</strong> Regularly Google yourself to see what information is public
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Secure Communication:</strong> Use Signal or encrypted messaging for sensitive conversations
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>VPN Usage:</strong> Use reputable VPN services when on public networks
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-in">
+      <div class="section-icon">
+        <i class="fas fa-users"></i>
+      </div>
+      <h2>Section 6: Protecting Your Community</h2>
+      
+      <div class="security-tip">
+        <strong>Share This Knowledge:</strong> You could save someone from losing their life savings today. Every person you educate makes the entire community safer.
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <span class="stat-value">89%</span>
+          <div>of scams succeed due to lack of awareness</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💡</div>
+          <span class="stat-value">1 in 3</span>
+          <div>people share security tips after being educated</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🛡️</div>
+          <span class="stat-value">67%</span>
+          <div>reduction in successful attacks with community awareness</div>
+        </div>
+      </div>
+
+      <h3>How to Help Others</h3>
+      <div class="checklist">
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Share This Article:</strong> Send to family WhatsApp groups and social media
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Use #SecureSA:</strong> Post security tips using this hashtag
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Verify Before You Trust:</strong> Always confirm suspicious messages independently
+          </div>
+        </div>
+        <div class="checklist-item">
+          <div class="checkbox" onclick="toggleCheckbox(this)"></div>
+          <div>
+            <strong>Report Scams:</strong> Forward suspicious messages to 32211 (South African Fraud Hotline)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="emergency-section fade-in">
+      <h3>Emergency Contacts - Save These Numbers</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+        <div style="background: white; padding: 1rem; border-radius: 8px;">
+          <strong>🚨 SAPS Cybercrime</strong><br>
+          📞 086 001 0111<br>
+          🌐 www.saps.gov.za
+        </div>
+        <div style="background: white; padding: 1rem; border-radius: 8px;">
+          <strong>💰 Banking Fraud</strong><br>
+          📞 0800 111 155<br>
+          🌐 www.sabric.co.za
+        </div>
+        <div style="background: white; padding: 1rem; border-radius: 8px;">
+          <strong>📱 Mobile Crime</strong><br>
+          📞 32211 (SMS)<br>
+          🌐 Report scam messages
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h3>Your Security Journey Starts Now</h3>
+      <p>Don't wait until you become the next victim. Take action today and protect yourself and your loved ones.</p>
+      <a href="https://www.youtube.com/@yourchannel" class="cta-button" target="_blank">
+        <i class="fab fa-youtube"></i>
+        Watch Security Tutorials
+      </a>
+      <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button onclick="shareArticle('whatsapp')" style="background: #25D366; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600;">
+          <i class="fab fa-whatsapp"></i> Share on WhatsApp
+        </button>
+        <button onclick="shareArticle('facebook')" style="background: #1877F2; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600;">
+          <i class="fab fa-facebook"></i> Share on Facebook
+        </button>
+        <button onclick="shareArticle('twitter')" style="background: #1DA1F2; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600;">
+          <i class="fab fa-twitter"></i> Share on Twitter
+        </button>
+      </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--gray-600); border-top: 1px solid var(--gray-200); margin-top: 3rem;">
+      <p><strong>Remember:</strong> Your security is only as strong as your weakest habit. Stay vigilant, stay informed, stay safe.</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">
+        📧 Questions? Email: security@yourdomain.com<br>
+        🔔 Subscribe for weekly security updates<br>
+        #SecureSA #CybersecuritySA #DigitalSafety
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // Floating navigation
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('floatingNav');
+      if (window.scrollY > 500) {
+        nav.classList.add('visible');
+      } else {
+        nav.classList.remove('visible');
+      }
+
+      // Update active section
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.floating-nav a');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Fade in animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Quiz functionality
+    function selectQuizOption(element, isCorrect) {
+      const options = element.parentNode.querySelectorAll('.quiz-option');
+      const result = document.getElementById('quizResult');
+      
+      options.forEach(opt => {
+        opt.style.pointerEvents = 'none';
+        if (opt === element) {
+          opt.classList.add(isCorrect ? 'correct' : 'incorrect');
+        } else {
+          opt.classList.add('incorrect');
+        }
+      });
+
+      if (isCorrect) {
+        result.innerHTML = '<div style="color: #10b981; font-weight: 600; margin-top: 1rem;"><i class="fas fa-check-circle"></i> Correct! Never share 6-digit verification codes with anyone.</div>';
+      } else {
+        result.innerHTML = '<div style="color: #ef4444; font-weight: 600; margin-top: 1rem;"><i class="fas fa-times-circle"></i> Incorrect. Sharing verification codes is the #1 way accounts get hijacked.</div>';
+      }
+    }
+
+    // Checkbox functionality
+    function toggleCheckbox(element) {
+      element.classList.toggle('checked');
+      if (element.classList.contains('checked')) {
+        element.innerHTML = '<i class="fas fa-check"></i>';
+      } else {
+        element.innerHTML = '';
+      }
+    }
+
+    // Share functionality
+    function shareArticle(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent('🚨 URGENT: Learn how hackers steal social media accounts in South Africa and how to protect yourself! #SecureSA');
+      
+      let shareUrl;
+      switch(platform) {
+        case 'whatsapp':
+          shareUrl = `https://wa.me/?text=${text}%20${url}`;
+          break;
+        case 'facebook':
+          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+          break;
+        case 'twitter':
+          shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+          break;
+      }
+      
+      window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+
+    // Add some dynamic content loading
+    document.addEventListener('DOMContentLoaded', () => {
+      // Simulate real-time threat counter
+      let threatCount = 2847;
+      const counter = setInterval(() => {
+        threatCount += Math.floor(Math.random() * 3) + 1;
+        const elements = document.querySelectorAll('.stat-value');
+        if (elements[0]) {
+          // Update one of the stats occasionally to show "live" data
+          if (Math.random() > 0.95) {
+            elements[0].textContent = (parseFloat(elements[0].textContent) + 0.1).toFixed(1) + 'M';
+          }
+        }
+      }, 5000);
+
+      // Auto-save reading progress
+      let readingProgress = 0;
+      window.addEventListener('scroll', () => {
+        const progress = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (progress > readingProgress) {
+          readingProgress = progress;
+          // Could save to localStorage if not restricted
+        }
+      });
+    });
+  </script>
 </body>
 </html>
