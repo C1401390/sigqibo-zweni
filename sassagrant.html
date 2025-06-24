@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🚨 URGENT: How Hackers Stole R2.8 Million from SASSA Recipients This Month</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-title {
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+    
+    .urgent-banner {
+      background: #ff4757;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 700;
+      animation: blink 1.5s ease-in-out infinite alternate;
+      box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    }
+    
+    @keyframes blink {
+      0% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 -10px 50px rgba(0,0,0,0.2);
+      position: relative;
+      top: -20px;
+      overflow: hidden;
+    }
+    
+    .content {
+      padding: 3rem 2rem;
+    }
+    
+    .section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .section-emoji {
+      font-size: 2rem;
+    }
+    
+    .stat-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stat-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shine 3s ease-in-out infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .stat-text {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .quote-section {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      margin: 2rem 0;
+      position: relative;
+      font-style: italic;
+      font-size: 1.2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+    }
+    
+    .quote-section::before {
+      content: '"';
+      font-size: 5rem;
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      opacity: 0.3;
+      font-family: Georgia, serif;
+    }
+    
+    .scam-alert {
+      background: #fff5f5;
+      border: 2px solid #feb2b2;
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+    
+    .scam-alert::before {
+      content: '⚠️';
+      font-size: 1.5rem;
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+    
+    .scam-alert-content {
+      margin-left: 3rem;
+    }
+    
+    .protection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .protection-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-left: 4px solid #667eea;
+      transition: transform 0.3s ease;
+    }
+    
+    .protection-card:hover {
+      transform: translateY(-3px);
+    }
+    
+    .protection-card h4 {
+      color: #667eea;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .checklist li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #e2e8f0;
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    
+    .checklist li::before {
+      content: '✅';
+      position: absolute;
+      left: 0;
+      top: 0.8rem;
+    }
+    
+    .share-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      margin-top: 3rem;
+    }
+    
+    .share-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .share-btn {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    
+    .share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .whatsapp { background: #25d366; }
+    .facebook { background: #4267b2; }
+    .twitter { background: #1da1f2; }
+    .telegram { background: #0088cc; }
+    
+    .emergency-contacts {
+      background: #f7fafc;
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+      border-left: 4px solid #e53e3e;
+    }
+    
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      margin: 2rem 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .video-placeholder {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      border-radius: 15px;
+      margin: 2rem 0;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .video-placeholder:hover {
+      transform: scale(1.02);
+    }
+    
+    .play-btn {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    @media (max-width: 768px) {
+      .content {
+        padding: 2rem 1rem;
+      }
+      
+      .section {
+        padding: 1.5rem;
+      }
+      
+      .hero-section {
+        padding: 2rem 1rem;
+      }
+      
+      .share-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .share-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+    }
+    
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff6b6b;
+      color: white;
+      padding: 1rem;
+      border-radius: 50px;
+      box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+      cursor: pointer;
+      animation: bounce 2s infinite;
+      z-index: 1000;
+      font-weight: 600;
+      border: none;
+      font-size: 0.9rem;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+    
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      z-index: 1000;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <div class="urgent-banner">
+    🚨 BREAKING: 15,000+ SASSA recipients hit by scams this month alone! 🚨
+  </div>
+  
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        💸 They Stole R2.8 Million from SASSA Recipients This Month
+      </h1>
+      <p class="hero-subtitle">
+        The shocking truth about how hackers are targeting South Africa's most vulnerable citizens — and the 7 steps that can save your grant money TODAY
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      
+      <div class="quote-section">
+        "I got an SMS saying my SASSA account was blocked. I clicked the link to fix it. Two hours later, my phone was dead and my R2,000 grant was gone. They even took money from my Capitec account." — Maria, Johannesburg
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-number">R2.8M</span>
+        <span class="stat-text">Stolen from SASSA recipients in June 2025 alone</span>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-emoji">🎯</span>
+          How They Choose Their Victims
+        </h2>
+        <p>Hackers aren't randomly targeting people. They have a playbook, and SASSA recipients are prime targets because:</p>
+        
+        <div class="protection-grid">
+          <div class="protection-card">
+            <h4>🔍 Data Harvesting</h4>
+            <p>Your personal details are sold on the dark web for as little as R50. Once they have your ID number, they can craft convincing fake messages.</p>
+          </div>
+          <div class="protection-card">
+            <h4>📱 Digital Dependency</h4>
+            <p>SASSA recipients rely heavily on mobile banking and SMS notifications, making them perfect targets for mobile-based scams.</p>
+          </div>
+          <div class="protection-card">
+            <h4>⏰ Payment Patterns</h4>
+            <p>Scammers know exactly when grants are paid and strike during these vulnerable periods when people expect official communication.</p>
+          </div>
+          <div class="protection-card">
+            <h4>🤝 Trust Exploitation</h4>
+            <p>They use official logos, government language, and even local dialects to appear legitimate and trustworthy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-emoji">🕵️</span>
+          The 5 Most Dangerous Scams Right Now
+        </h2>
+        
+        <div class="scam-alert">
+          <div class="scam-alert-content">
+            <h4>1. The "Account Verification" SMS</h4>
+            <p><strong>What they send:</strong> "Your SASSA account needs verification. Click here: bit.ly/sassa-verify or your grant will be suspended."</p>
+            <p><strong>What happens:</strong> The link steals your banking details and OTP codes.</p>
+          </div>
+        </div>
+
+        <div class="scam-alert">
+          <div class="scam-alert-content">
+            <h4>2. The WhatsApp "Grant Boost" Scam</h4>
+            <p><strong>What they offer:</strong> "Apply for R5,000 emergency grant through this WhatsApp number."</p>
+            <p><strong>What happens:</strong> They collect your personal information to steal your identity and access your accounts.</p>
+          </div>
+        </div>
+
+        <div class="scam-alert">
+          <div class="scam-alert-content">
+            <h4>3. The SIM Swap Attack</h4>
+            <p><strong>How it works:</strong> They use your stolen ID to port your number to their SIM card.</p>
+            <p><strong>What happens:</strong> They receive all your OTP codes and can access your bank accounts instantly.</p>
+          </div>
+        </div>
+
+        <div class="scam-alert">
+          <div class="scam-alert-content">
+            <h4>4. The "Technical Support" Call</h4>
+            <p><strong>What they say:</strong> "Hello, I'm calling from SASSA IT support. We're updating our system and need to verify your details."</p>
+            <p><strong>What happens:</strong> They walk you through "helping" them access your accounts.</p>
+          </div>
+        </div>
+
+        <div class="scam-alert">
+          <div class="scam-alert-content">
+            <h4>5. The Facebook/Instagram Grant Group</h4>
+            <p><strong>What they create:</strong> Fake groups promising "insider tips" for getting additional grants.</p>
+            <p><strong>What happens:</strong> They collect member information and send targeted scam messages.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-placeholder" onclick="playVideo()">
+        <div class="play-btn">▶️</div>
+        <div style="margin-left: 1rem;">
+          <h3>Watch: Real SASSA Scam Messages Exposed</h3>
+          <p>See actual screenshots of scam messages and learn how to spot them</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-emoji">🛡️</span>
+          Your 7-Step Protection Plan
+        </h2>
+        
+        <ul class="checklist">
+          <li><strong>Never click links in SMS messages</strong> — Always go directly to the official SASSA website or app</li>
+          <li><strong>Set up SIM protection</strong> — Call your network provider and request a SIM swap block</li>
+          <li><strong>Use strong, unique passwords</strong> — Different passwords for banking, SASSA, and social media</li>
+          <li><strong>Enable two-factor authentication</strong> — Add extra security to all your accounts</li>
+          <li><strong>Verify before you trust</strong> — Call official numbers to confirm any suspicious communication</li>
+          <li><strong>Keep software updated</strong> — Install security updates on your phone immediately</li>
+          <li><strong>Educate your network</strong> — Share this information with family and friends</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-emoji">🚨</span>
+          Been Scammed? Act Fast!
+        </h2>
+        
+        <div class="emergency-contacts">
+          <h4>🔥 First 30 Minutes Are Critical:</h4>
+          <ol>
+            <li><strong>Call your bank immediately:</strong> 
+              <ul>
+                <li>Capitec: 0860 102 043</li>
+                <li>FNB: 087 575 9404</li>
+                <li>Standard Bank: 0860 123 000</li>
+                <li>Absa: 0860 557 557</li>
+              </ul>
+            </li>
+            <li><strong>Contact your network provider:</strong>
+              <ul>
+                <li>Vodacom: 082 135</li>
+                <li>MTN: 135</li>
+                <li>Cell C: 084 140</li>
+              </ul>
+            </li>
+            <li><strong>Report to SAPS:</strong> Open a cybercrime case</li>
+            <li><strong>Contact SASSA:</strong> 0800 60 10 11</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-number">89%</span>
+        <span class="stat-text">of scam victims could have been saved if they knew these warning signs</span>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">
+          <span class="section-emoji">🎓</span>
+          Teach Your Family These Red Flags
+        </h2>
+        
+        <div class="protection-grid">
+          <div class="protection-card">
+            <h4>🚫 Urgent Language</h4>
+            <p>"Act now or lose your grant" — Real government communication never uses panic tactics.</p>
+          </div>
+          <div class="protection-card">
+            <h4>🔗 Suspicious Links</h4>
+            <p>bit.ly, tinyurl, or any shortened links in official messages are always fake.</p>
+          </div>
+          <div class="protection-card">
+            <h4>📞 Unsolicited Calls</h4>
+            <p>SASSA will never call you asking for personal information or passwords.</p>
+          </div>
+          <div class="protection-card">
+            <h4>💰 Money Requests</h4>
+            <p>Any request for upfront payment or fees to access your grant is a scam.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="share-section">
+      <h2>🚀 Help Save Someone's Grant Money Today</h2>
+      <p>Share this guide with 3 people who receive SASSA grants. You could be preventing them from losing their next payment.</p>
+      
+      <div class="share-buttons">
+        <a href="#" class="share-btn whatsapp" onclick="shareWhatsApp()">
+          <span>📱</span> Share on WhatsApp
+        </a>
+        <a href="#" class="share-btn facebook" onclick="shareFacebook()">
+          <span>👥</span> Share on Facebook
+        </a>
+        <a href="#" class="share-btn twitter" onclick="shareTwitter()">
+          <span>🐦</span> Share on Twitter
+        </a>
+        <a href="#" class="share-btn telegram" onclick="shareTelegram()">
+          <span>✈️</span> Share on Telegram
+        </a>
+      </div>
+      
+      <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+        Follow us for more cybersecurity tips: 
+        <strong>@CyberSecuritySA</strong> | 
+        <strong>Subscribe to our YouTube</strong> | 
+        <strong>Join our WhatsApp Group</strong>
+      </p>
+    </div>
+  </div>
+
+  <button class="floating-cta" onclick="scrollToShare()">
+    💸 Save Someone's Grant!
+  </button>
+
+  <script>
+    // Progress bar animation
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // Share functions
+    function shareWhatsApp() {
+      const text = encodeURIComponent("🚨 URGENT: Hackers stole R2.8M from SASSA recipients this month! This guide could save your grant money: ");
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://wa.me/?text=${text}${url}`, '_blank');
+    }
+
+    function shareFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+
+    function shareTwitter() {
+      const text = encodeURIComp
