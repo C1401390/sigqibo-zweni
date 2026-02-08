@@ -1,179 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Portfolio Website</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const links = document.querySelectorAll('a[href^="#"]');
-      for (const link of links) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      }
-    });
-  </script>
- <style>
-  html, body {
-    height: 100%;
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .content {
-    flex: 1;
-    padding-bottom: 50px; /* Allows space for the footer */
-  }
-
-  .footer {
-    background-color: #081b29;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header-->
-  <header class="header">
-    <a href="index.html" class="logo">Sigqibo Zweni</a>
-    <nav class="navbar" aria-label="Main navigation">
-      <a href="index.html" class="active">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-      <a href="articles.html" class="mobile-only">Articles</a>
-      <a href="prjects.html">Projects</a>
-    </nav>
-  </header>
-  <!-- Side Bar-->
-  <div class="sidebar">
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="cybersecurity.html">CyberSecurity</a></li>
-      </ul>
-    </nav>
-  </div>
-  <!-- MAIN BODY CONTENT-->
-  <main class="main-content">
-  <section class="home">
-      <div class="home-content">
-        <div class="Profile-pic-div">
-          <img class="Profile-pic" src="tarsgqie.jpg">
-        </div>
-        <h1>Sigqibo Zweni</h1>
-        <h3>Front End Developer</h3>
-        <p>I specialize in securing digital identities, protecting devices, and building reliable, professional web solutions for individuals, startups, and small businesses. My work sits at the intersection of cybersecurity and practical IT support — helping people prevent attacks, recover from incidents, and operate their technology with confidence.
-
-In cybersecurity, I focus on safeguarding social media accounts, detecting and removing malware or spyware, strengthening device security, and guiding users on safer digital habits. I assist clients who have been hacked, locked out of accounts, or exposed to scams, and help them regain control while reducing future risks.
-
-On the technical support side, I troubleshoot laptops, PCs, and Android devices, resolve performance issues, fix system errors, install or repair Windows and Linux, and perform secure password resets when credentials are lost. I also help businesses maintain their CMS websites and keep their systems running smoothly.
-
-In web development, I design and build clean, responsive front-end websites using modern tools such as HTML, CSS, and Bootstrap, with a growing focus on JavaScript and secure web applications.
-
-Through my business, **Alpha State Cyber Security**, I provide both remote assistance and on-site technical support across South Africa, working closely with clients to understand their needs and deliver practical, trustworthy solutions that prioritize safety, privacy, and usability.
-</p>
-        <div class="skills">
-          <h4>My Skills</h4>
-          <div id="skills" class="skill-buttons">
-            <a href="#" class="skill-btn" onclick="showSkillInfo('Front End Developer')">Front End Developer</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('CSS')">CSS</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('HTML')">HTML</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('JavaScript')">JavaScript</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA A+')">CompTIA A+</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA Network+')">CompTIA Network+</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA Server+')">CompTIA Server+</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA Server+')">Cybersecurity+</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('CompTIA Server+')">penetration Tesing+</a>
-            <a href="#" class="skill-btn" onclick="showSkillInfo('Training')">Training</a>
-          </div>
-        </div>
-        <div id="contact" class="home-sci">
-          <a href="https://https://web.facebook.com/sgqibo.g.zweni" target="_blank"><i class='bx bxl-facebook'></i></a>
-          <a href="https://twitter.com/yourprofile" target="_blank"><i class='bx bxl-twitter'></i></a>
-          <a href="https://www.linkedin.com/in/sigqibo-zweni-828421158/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-          <a href="https://wa.me/+27818946158" target="_blank"><i class='bx bxl-whatsapp'></i></a>
-        </div>
-        <div class="btn-box">
-          <a href="#">Hire me</a>
-          <a href="#">Let's talk</a>
-        </div>
-        <br>
-        <br>
-        <div class="social-share mt-4">
-  <p><strong>📣 Share my website:</strong></p>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourusername.github.io" target="_blank" class="btn btn-primary btn-sm">
-    <i class='bx bxl-facebook'></i> Facebook
-  </a>
-  <a href="https://wa.me/?text=Check%20out%20this%20portfolio:%20https://yourusername.github.io" target="_blank" class="btn btn-success btn-sm">
-    <i class='bx bxl-whatsapp'></i> WhatsApp
-  </a>
-  <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20portfolio%20by%20Sigqibo:%20https://yourusername.github.io" target="_blank" class="btn btn-info btn-sm">
-    <i class='bx bxl-twitter'></i> Twitter/X
-  </a>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourusername.github.io&title=Sigqibo%20Zweni%20Portfolio" target="_blank" class="btn btn-secondary btn-sm">
-    <i class='bx bxl-linkedin'></i> LinkedIn
-  </a>
-</div>
-
-      </div>
-    </section>
-
-    
-
-  </main>
-
-  <footer class="footer-container">
-    <div class="footer">
-        <div class="container">
-            <!-- Footer content -->
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Navigation</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="articles.html">Articles</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contact</h5>
-                    <p>15 Bell Cres, Westlake Business Park, WC, ZA</p>
-                    <p>Email: <a href="sigqibogeorge@gmail.com">sigqibogeorge@gmail.com</a></p>
-                    <p>Phone: <a href="tel:+27818946158">+27818946158</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Follow Us</h5>
-                    <a href="https://web.facebook.com/sgqibo.g.zweni" class="mr-3"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="mr-3"><i class="bx bxl-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/sigqibo-zweni-828421158/" class="mr-3"><i class="bx bxl-linkedin'></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-  <!-- Bootstrap scripts -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    <main>
+        <section>
+            <h2>About</h2>
+            <p>This is a sample paragraph to describe the content of the site.</p>
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <p>You can reach us at <a href="mailto:info@example.com">info@example.com</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 My Website. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-
